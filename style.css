@@ -53,7 +53,7 @@ a:hover {
   width: 30px;
   height: auto;
 }
-#hamburger-nav {
+#mobile-nav {
   display: none;
 }
 .hamburger-menu {
@@ -337,7 +337,8 @@ button:hover {
 
 .experience-skills {
   font-style: italic;
-  color: rgb(85, 85, 85);
+  font-weight: bold;
+  color: black;
 }
 
 #projects {
@@ -347,21 +348,20 @@ button:hover {
 }
 
 .projects-container {
-  display: flex;
+  display: grid; /* Use grid layout for the project cards */
   gap: 20px;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Flexible grid */
+  justify-content: center; /* Center the grid content */
 }
 
 .project-card {
   display: flex;
-  flex: 1;
+  flex-direction: column; /* Stack image above text */
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
   margin: 10px;
   transition: transform 0.3s ease;
-  flex-direction: column; /* Stack image above text */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -371,7 +371,7 @@ button:hover {
 }
 
 .project-image img {
-  width: 100%; /* Make the image take up the full width of the card */
+  width: 100%;
   height: 150px;
   object-fit: cover;
 }
@@ -400,6 +400,14 @@ button:hover {
   margin-top: 10px;
   color: #555;
 }
+
+/* Mobile view adjustments */
+@media screen and (max-width: 768px) {
+  .projects-container {
+    grid-template-columns: 1fr; /* Single column for mobile */
+  }
+}
+
 .view-all-projects a {
   display: inline-block;
   margin-top: 20px;
@@ -417,63 +425,86 @@ button:hover {
   padding: 40px;
   text-align: center;
 }
+
 .contact-info-upper-container {
-    display: flex;
-    justify-content: center; /* Center the bar in the container */
-    padding: 20px;
-  }
-  
-  .contact-info-container {
-    display: flex;
-    justify-content: space-between; /* Space out the items evenly */
-    align-items: center; /* Vertically align items */
-    background-color: #f9f9f9;
-    padding: 15px 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 40%;
-    margin: 3rem auto; /* Centers the container */
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
 
-  .contact-info-container p {
-    margin: 0; /* Remove default margin */
-    font-size: 1.1rem; /* Increase font size slightly */
-  }
-  
-  .contact-info-container a {
-    text-decoration: none; /* Remove underline */
-    color: #333; /* Dark text color */
-    font-weight: bold; /* Make the text bold */
-    transition: color 0.3s ease; /* Smooth transition for color change */
-  }
-  
-  .contact-info-container a:hover {
-    color: firebrick; /* Change color on hover */
-  }
-  .contact-link {
-    display: inline-flex; /* Align items inline */
-    align-items: center;  /* Vertically center the text and image */
-    gap: 8px; /* Add spacing between the image and text */
-    text-decoration: none; /* Remove underline */
-    font-weight: bold;
-    color: #333;
-    transition: color 0.3s ease;
-  }
-  
-  .contact-link:hover {
-    color: #007bff; /* Change color on hover */
-  }
-  
-  .contact-icon {
-    width: 20px;  /* Adjust size of the icon */
-    height: 20px;
-    object-fit: contain;
-  }
-  
-.contact-icon{
-    width: 25px;
-    height: auto;
+.contact-info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 15px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 40%;
+  margin: 3rem auto;
 }
+
+.contact-info-container p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.contact-info-container a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.contact-info-container a:hover {
+  color: firebrick;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #007bff;
+}
+
+.contact-icon {
+  width: 25px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Mobile view adjustments */
+@media screen and (max-width: 768px) {
+  .contact-info-container {
+    flex-direction: column; /* Stack items vertically */
+    width: 80%; /* Make the container wider on mobile */
+    padding: 20px; /* Add more padding for better spacing */
+    margin: 2rem auto; /* Adjust margin for better spacing */
+    gap: 15px; /* Add a gap between each contact item */
+  }
+
+  .contact-info-container p {
+    font-size: 1rem; /* Reduce font size for mobile */
+    text-align: center; /* Center-align text */
+  }
+
+  .contact-link {
+    justify-content: center; /* Center-align the contact link */
+    gap: 12px; /* Add a bit more spacing between the icon and text */
+  }
+
+  .contact-icon {
+    width: 20px; /* Reduce icon size for mobile */
+  }
+}
+
   
   
   

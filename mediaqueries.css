@@ -1,17 +1,65 @@
-@media screen and (max-width: 1200px) {
-    #desktop-nav{
-        display: none;
-    }
-    #hamburger-nav{
-        display: flex;
-    }
-    .article-container {
-        grid-template-columns: 1fr; 
-      }
-}
-@media (max-width: 600px) {
-    .contact-info-container {
-      flex-direction: column; /* Stack the items vertically on smaller screens */
-      gap: 10px; /* Space between items when stacked */
-    }
+@media screen and (max-width: 768px) {
+  #desktop-nav {
+    display: none;
   }
+
+  #mobile-nav {
+    display: block;
+  }
+
+  .hamburger-menu {
+    display: block;
+    position: absolute; /* Position it relative to the parent nav */
+    top: 15px; /* Adjust the distance from the top */
+    right: 10px; /* Position it on the right side */
+  }
+
+  nav {
+    height: auto;
+    padding: 10px;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  body {
+    transition: padding-top 0.3s ease; /* Animate the padding-top of body */
+    overflow-x: hidden;
+  }
+
+  .logo img {
+    width: 25px;
+    height: auto;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1rem;
+  }
+
+  body.menu-open .section__text__p1 {
+    padding-top: 80px; /* Adds space to move the title down when the menu is opened */
+    transition: padding-top 0.3s ease; /* Animate the title's padding-top change */
+  }
+
+  .section__pic-container {
+    display: none;
+  }
+  .icon{
+    display: none;
+  }
+
+  /* ABOUT */
+  #about{
+    margin: 0;
+  }
+  #experience{
+    margin: 0;
+  }
+  #projects{
+    margin: 0;
+  }
+  #contact{
+    margin: 0;
+  }
+}

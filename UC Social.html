@@ -191,7 +191,11 @@
         max-width: 150px; /* Reduce image width */
         height: auto;
       }
+      #mobile-nav {
+        display: none;
+      }
     </style>
+    <link rel="stylesheet" href="responsive.css" />
   </head>
   <body>
     <nav id="desktop-nav">
@@ -200,6 +204,26 @@
       </div>
       <div>
         <ul class="nav-links">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#experience">Experience</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="mobile-nav">
+      <div class="logo">
+        <a href="index.html"><img src="./assets/about.png" alt="" /></a>
+      </div>
+      <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="menu-links" id="navLinks">
+        <ul>
           <li><a href="index.html#about">About</a></li>
           <li><a href="index.html#experience">Experience</a></li>
           <li><a href="index.html#projects">Projects</a></li>
@@ -258,14 +282,11 @@
         <h2>Credits</h2>
         <p>
           Special thanks to
-          <a href="https://www.linkedin.com/in/daniel-fernando-575992250/" class="cred"
-            >Daniel Fernando</a
-          >,
           <a
-            href="#"
+            href="https://www.linkedin.com/in/daniel-fernando-575992250/"
             class="cred"
-            >Steven Nelson</a
-          >,
+            >Daniel Fernando</a
+          >, <a href="#" class="cred">Steven Nelson</a>,
           <a href="https://www.linkedin.com/in/ferriogentlandy/" class="cred"
             >Ferrio Gent Landy</a
           >
@@ -305,4 +326,5 @@
       </div>
     </div>
   </body>
+  <script src="script.js"></script>
 </html>

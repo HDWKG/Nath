@@ -21,22 +21,25 @@
       </div>
     </nav>
 
-    <nav id="hamburger-nav">
-      <div class="logo"><img src="./assets/logo.png" alt="" /></div>
+    <nav id="mobile-nav">
+      <div class="logo"><img src="./assets/about.png" alt="" /></div>
       <div class="hamburger-menu">
         <div class="hamburger-icon" onclick="toggleMenu()">
           <span></span>
           <span></span>
           <span></span>
         </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        <div class="menu-links" id="menuLinks">
+          <ul>
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          </ul>
         </div>
       </div>
     </nav>
+
     <section id="profile">
       <div class="section__pic-container">
         <img src="./assets/profile.jpg" alt="Nath's Profile Picture" />
@@ -102,12 +105,12 @@
     </section>
     <section id="experience">
       <p class="exploreMy">Expolore My</p>
-      <h1 class="about__title">Experience</h1>
+      <h1 class="about__title">Experiences</h1>
       <div class="experience-container">
         <div class="experience-item">
           <div class="experience-date">February 2025 - Present</div>
           <div class="experience-title">
-            Mobile App Development Assistant Lecturer'
+            Mobile App Development Assistant Lecturer
           </div>
           <div class="experience-description">
             As a Swift Assistant Lecturer for the Mobile App Development course,
@@ -127,7 +130,7 @@
         <div class="experience-item">
           <div class="experience-date">September 2024 - January 2025</div>
           <div class="experience-title">
-            Visual Programming Assistant Lecturer'
+            Visual Programming Assistant Lecturer
           </div>
           <div class="experience-description">
             As an Assistant Lecturer, I specialize in teaching visual
@@ -146,7 +149,7 @@
         <div class="experience-item">
           <div class="experience-date">February 2024 - June 2024</div>
           <div class="experience-title">
-            Web Development Assistant Lecturer'
+            Web Development Assistant Lecturer
           </div>
           <div class="experience-description">
             As a Web Development Assistant Lecturer, I am passionate about
@@ -160,7 +163,7 @@
             critically and solve real-world challenges in web development.
           </div>
           <div class="experience-skills">
-            Skills: Web Development · Laravel · HTML · Cascading Style Sheets
+            Web Development · Laravel · HTML · Cascading Style Sheets
             (CSS) · JavaScript
           </div>
         </div>
@@ -181,7 +184,7 @@
             resonates with the audience.
           </div>
           <div class="experience-skills">
-            Skills: Photography · Videography · Video Editing · Publications
+            Photography · Videography · Video Editing · Publications
           </div>
         </div>
       </div>
