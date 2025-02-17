@@ -6,6 +6,10 @@ function toggleMenu() {
     icon.classList.toggle("open");
     body.classList.toggle('menu-open');
 }
-document.querySelector('.hamburger-icon').addEventListener('click', function() {
-    this.classList.toggle('open');
-});
+function closeMenu(){
+    document.querySelector('.hamburger-icon').addEventListener('click', function() {
+        this.classList.toggle('open');
+    });
+}
+
+

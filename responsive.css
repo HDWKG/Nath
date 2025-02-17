@@ -85,9 +85,9 @@
   .hamburger-menu {
     display: block;
   }
-a:hover{
+  a:hover {
     text-decoration: none;
-}
+  }
   /* Fixed Hamburger Icon at top right */
   .hamburger-icon {
     position: fixed; /* Fixed position */
@@ -161,7 +161,7 @@ a:hover{
     margin: 0;
     text-align: right;
   }
-  button{
+  button {
     width: 15em;
   }
 }

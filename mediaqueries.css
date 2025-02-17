@@ -38,7 +38,7 @@
   }
 
   body.menu-open .section__text__p1 {
-    padding-top: 80px; /* Adds space to move the title down when the menu is opened */
+    padding-top: 20000px; /* Adds space to move the title down when the menu is opened */
     transition: padding-top 0.3s ease; /* Animate the title's padding-top change */
   }
 
