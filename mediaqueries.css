@@ -1,0 +1,17 @@
+@media screen and (max-width: 1200px) {
+    #desktop-nav{
+        display: none;
+    }
+    #hamburger-nav{
+        display: flex;
+    }
+    .article-container {
+        grid-template-columns: 1fr; 
+      }
+}
+@media (max-width: 600px) {
+    .contact-info-container {
+      flex-direction: column; /* Stack the items vertically on smaller screens */
+      gap: 10px; /* Space between items when stacked */
+    }
+  }

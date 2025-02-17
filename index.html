@@ -1,11 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    test
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo"><img src="./assets/about.png" alt="" /></div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <nav id="hamburger-nav">
+      <div class="logo"><img src="./assets/logo.png" alt="" /></div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="./assets/profile.jpg" alt="Nath's Profile Picture" />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="title">Nathan Darrell</h1>
+        <p class="section__text__p2">Software Developer</p>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-1"
+            onclick="window.open('./assets/resume.pdf')"
+          >
+            Download CV
+          </button>
+          <button class="btn btn-color-2" onclick="location.href='#contact'">
+            Contact Info
+          </button>
+        </div>
+        <div id="socials-container">
+          <a href="https://github.com/HDWKG" class="social-icon">
+            <img src="./assets/github.png" alt="Github Logo" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/nathan-darrell/"
+            class="social-icon"
+          >
+            <img src="./assets/linked.png" alt="Linked In Logo" />
+          </a>
+          <a href="https://www.instagram.com/hdwk_g/" class="social-icon">
+            <img src="./assets/insta.png" alt="Insta Logo" />
+          </a>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <p class="get_to_know">Get To Know More</p>
+      <h1 class="about__title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img src="./assets/ditto.png" alt="pp" class="about-pic" />
+        </div>
+        <div class="about___text">
+          <p>
+            I am a passionate software developer dedicated to crafting
+            innovative, user-friendly applications. With a strong foundation in
+            computer science and a keen eye for detail, I specialize in building
+            high-quality software solutions tailored to client needs. My
+            experience spans custom web applications, mobile development, and
+            scalable software systems. I take pride in writing clean, efficient
+            code and delivering seamless user experiences. Committed to
+            excellence, I strive to bring ideas to life through technology while
+            ensuring every project exceeds expectations.
+          </p>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        class="icon"
+        alt=""
+        onclick="location.href='#experience'"
+      />
+    </section>
+    <section id="experience">
+      <p class="exploreMy">Expolore My</p>
+      <h1 class="about__title">Experience</h1>
+      <div class="experience-container">
+        <div class="experience-item">
+          <div class="experience-date">February 2025 - Present</div>
+          <div class="experience-title">
+            Mobile App Development Assistant Lecturer'
+          </div>
+          <div class="experience-description">
+            As a Swift Assistant Lecturer for the Mobile App Development course,
+            I assisted students in learning how to design and develop fully
+            functional iOS applications using Swift. I provided hands-on
+            instruction on key concepts such as user interface design with UIKit
+            and SwiftUI, data management with Core Data, integrating APIs, and
+            optimizing app performance. My role also involved conducting lab
+            sessions, reviewing students’ code, providing constructive feedback,
+            and guiding them through building real-world mobile apps while
+            emphasizing best practices and industry standards.
+          </div>
+          <div class="experience-skills">
+            Swift (Programming Language) · Apple Software
+          </div>
+        </div>
+        <div class="experience-item">
+          <div class="experience-date">September 2024 - January 2025</div>
+          <div class="experience-title">
+            Visual Programming Assistant Lecturer'
+          </div>
+          <div class="experience-description">
+            As an Assistant Lecturer, I specialize in teaching visual
+            programming concepts and practical skills for developing mobile
+            applications using Kotlin and Android Studio. I focus on creating an
+            engaging and interactive learning environment where students can
+            visualize complex programming concepts and build Android
+            applications from the ground up. My teaching approach emphasizes
+            hands-on projects, allowing students to gain real-world experience
+            in app development.
+          </div>
+          <div class="experience-skills">
+            Kotlin · Android Development · Android
+          </div>
+        </div>
+        <div class="experience-item">
+          <div class="experience-date">February 2024 - June 2024</div>
+          <div class="experience-title">
+            Web Development Assistant Lecturer'
+          </div>
+          <div class="experience-description">
+            As a Web Development Assistant Lecturer, I am passionate about
+            helping students master the core skills and concepts of web
+            development. I assist in delivering comprehensive lessons covering
+            front-end and back-end technologies, including HTML, CSS,
+            JavaScript, and server-side programming. I support students through
+            hands-on projects, code reviews, and personalized guidance to help
+            them build strong coding foundations. My role allows me to foster a
+            collaborative learning environment, encouraging students to think
+            critically and solve real-world challenges in web development.
+          </div>
+          <div class="experience-skills">
+            Skills: Web Development · Laravel · HTML · Cascading Style Sheets
+            (CSS) · JavaScript
+          </div>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-date">July 2022 - July 2023</div>
+          <div class="experience-title">
+            Publication & Documentation Coordinator - Student Union Informatics
+          </div>
+          <div class="experience-description">
+            As a passionate photographer and videographer, I specialize in
+            capturing moments that tell compelling stories through both still
+            and moving images. With a keen eye for detail and a creative
+            approach, I produce high-quality visuals that communicate emotion,
+            brand identity, and a sense of purpose. Whether working on personal
+            projects, commercial shoots, or documentary-style content, I am
+            dedicated to delivering visually striking and engaging work that
+            resonates with the audience.
+          </div>
+          <div class="experience-skills">
+            Skills: Photography · Videography · Video Editing · Publications
+          </div>
+        </div>
+      </div>
+
+      <img
+        src="./assets/arrow.png"
+        class="icon"
+        alt=""
+        onclick="location.href='#projects'"
+      />
+    </section>
+    <section id="projects">
+      <p class="exploreMy">Browse My Recent</p>
+      <h1 class="about__title">Projects</h1>
+      <div class="projects-container">
+        <div class="project-card">
+          <div class="project-image">
+            <img src="./assets/nusantara.png" alt="Project 1" />
+          </div>
+          <div class="project-text">
+            <h3>
+              <a href="NusantaraKafe.html">Nusantara Kafe</a>
+            </h3>
+            <p>
+              Nusantara Kafe is a restaurant management game where you help Ina
+              and Chef Toni serve customers and grow their business.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <img src="./assets/yuuka.jpg" alt="Project 2" />
+          </div>
+          <div class="project-text">
+            <h3><a href="YuccaAI.html">Yucca AI</a></h3>
+            <p>
+              Yucca AI is an interactive chatbot designed to provide fast and
+              accurate answers about UC, scholarships, and New Student
+              Admissions using advanced AI and API integrations.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <img src="./assets/bloom.jpg" alt="BloomSketch" />
+          </div>
+          <div class="project-text">
+            <h3>
+              <a href="BloomSketch.html">BloomSketch</a>
+            </h3>
+            <p>
+              BloomSketch is an interactive art app that inspires creativity in
+              children through drawing tools, progress tracking, and engaging
+              educational features.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <img src="./assets/ucSocial.png" alt="Project 4" />
+          </div>
+          <div class="project-text">
+            <h3>
+              <a href="UC Social.html">UC Social</a>
+            </h3>
+            <p>
+              UC Social is a platform that connects university students,
+              allowing them to share posts, explore committees, and interact
+              with the campus community.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="view-all-projects">
+        <a href="projects.html">View All Projects</a>
+      </div> -->
+    </section>
+    <section id="contact">
+      <p class="exploreMy">Get In Touch</p>
+      <h1 class="about__title">Contact</h1>
+      <div class="contact-info-container">
+        <p>
+          <a href="mailto:ndsutejo@gmail.com" class="contact-link">
+            <img
+              src="./assets/email.png"
+              alt="mail Logo"
+              class="contact-icon"
+            />
+            ndsutejo@gmail.com
+          </a>
+        </p>
+        <p>
+          <a
+            href="https://linkedin.com/in/ndsutejo"
+            target="_blank"
+            class="contact-link"
+          >
+            <img
+              src="./assets/linked.png"
+              alt="link Logo"
+              class="contact-icon"
+            />
+            LinkedIn
+          </a>
+        </p>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
 </html>

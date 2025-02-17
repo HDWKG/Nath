@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BloomSketch</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .title {
+        font-size: 3rem;
+        text-align: center;
+        color: firebrick;
+        margin-top: 0;
+      }
+      .exploreMy {
+        text-align: center;
+        font-size: 1rem;
+        margin-top: 5rem;
+      }
+      body {
+        font-family: "Inter", serif;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      p {
+        margin-top: 1rem;
+        color: rgb(85, 85, 85);
+      }
+      nav,
+      .nav-links {
+        display: flex;
+      }
+      nav {
+        justify-content: space-around;
+        align-items: center;
+        height: 17vh;
+      }
+      .nav-links {
+        gap: 2rem;
+        list-style: none;
+        font-size: 1.5rem;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+        text-decoration-color: white;
+      }
+      a:hover {
+        color: firebrick;
+        text-decoration: underline;
+        text-underline-offset: 1rem;
+        text-decoration-color: firebrick;
+      }
+      .logo:hover {
+        cursor: default;
+      }
+      .logo img {
+        display: block;
+        width: 30px;
+        height: auto;
+      }
+      .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 50px;
+        max-width: 900px;
+        margin: auto;
+      }
+      .content img {
+        width: 300px;
+        height: auto;
+        border-radius: 10px;
+      }
+      .content-text-left {
+        max-width: 500px;
+        text-align: left;
+      }
+      .content-text-right {
+        max-width: 500px;
+        text-align: right;
+      }
+      .content-text {
+        max-width: 500px;
+        text-align: center;
+      }
+      .footer {
+        text-align: center;
+        padding: 20px;
+        margin-top: 20px;
+        margin-bottom: 50px;
+      }
+      button {
+        margin-top: 20px;
+        width: 15em;
+        position: relative;
+        height: 3em;
+        border: 3px ridge firebrick;
+        outline: none;
+        background-color: transparent;
+        color: black;
+        transition: 1s;
+        border-radius: 0.3em;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .btn-container .btn-color-1 {
+        width: 15em; /* The first button will be 15em wide */
+      }
+
+      .btn-container .btn-color-2 {
+        width: 10em; /* The second button will be 10em wide */
+      }
+
+      button::after {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 3%;
+        width: 95%;
+        height: 40%;
+        background-color: white;
+        transition: 0.5s;
+        transform-origin: center;
+      }
+
+      button::before {
+        content: "";
+        transform-origin: center;
+        position: absolute;
+        top: 80%;
+        left: 3%;
+        width: 95%;
+        height: 40%;
+        background-color: white;
+        transition: 0.5s;
+      }
+
+      button:hover::before,
+      button:hover::after {
+        transform: scale(0);
+      }
+
+      button:hover {
+        box-shadow: inset 0px 0px 25px snow;
+      }
+      .btn-container {
+        display: flex;
+        gap: 20px; /* Adjust the space between buttons */
+        justify-content: center; /* Centers buttons horizontally */
+      }
+      .cred {
+        color: rgb(85, 85, 85);
+        font-weight: bold;
+        text-decoration: none;
+        text-decoration-color: white;
+      }
+      .cred:hover {
+        color: firebrick;
+        text-decoration: none;
+      }
+      .tags {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .tags span {
+        display: inline-block;
+        padding: 8px 15px;
+        border: 2px solid firebrick;
+        border-radius: 50px;
+        color: firebrick;
+        font-weight: bold;
+        font-size: 14px;
+        text-align: center;
+        transition: 0.3s;
+      }
+
+      .tags span:hover {
+        background-color: firebrick;
+        color: white;
+        cursor: pointer;
+      }
+      img {
+        max-width: 150px; /* Reduce image width */
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">
+        <a href="index.html"><img src="./assets/about.png" alt="" /></a>
+      </div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#experience">Experience</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <h1 class="title">BloomSketch</h1>
+    <div class="content">
+      <img src="./assets/bloom.jpg" alt="Nusantara Kafe" />
+      <div class="content-text-right">
+        <h2>About BloomSketch</h2>
+        <p>
+          BloomSketch is an interactive and educational art application designed
+          to inspire creativity in children. It offers comprehensive drawing
+          tools, an organized art collection, and motivational progress
+          tracking. The app encourages children to explore their artistic
+          abilities with a unique tree growth system and streaks that visually
+          represent their artistic growth. BloomSketch provides a variety of
+          brushes, customizable color palettes, and easy categorization of
+          artwork, making it fun and easy for users to share their creative
+          collections. With educational resources, BloomSketch nurtures
+          creativity while keeping the learning process engaging.
+        </p>
+      </div>
+    </div>
+    <div class="content">
+      <div class="content-text-left">
+        <h2>App Features</h2>
+        <p>
+          <strong>Comprehensive Drawing Tools:</strong> A wide range of brushes
+          and tools for creative expression, including customizable color
+          palettes.
+        </p>
+        <p>
+          <strong>Motivational Progress Tracking:</strong> A unique tree growth
+          and streaks system visually represents users' artistic progress,
+          motivating them to keep improving.
+        </p>
+      </div>
+      <img src="./assets/bloom1.jpg" alt="Nusantara Kafe" />
+    </div>
+    <div class="content">
+      <img src="./assets/bloom2.png" alt="Nusantara Kafe" />
+      <div class="content-text-right">
+        <h2>What I Learned</h2>
+        <p>
+          I learned how to use WatchOS, code in Swift, create SwiftUI
+          interfaces, and utilize PencilKit from Apple to create the drawing
+          aspect for kids to draw and learn from.
+        </p>
+      </div>
+    </div>
+    <div class="content">
+      <div class="content-text">
+        <h2>Credits</h2>
+        <p>
+          Special thanks to
+          <a
+            href="https://www.linkedin.com/in/bernicko-rphl-25474524b/"
+            class="cred"
+            >Bernicko Raphael</a
+          >,
+          <a href="https://www.linkedin.com/in/samuelmiracle/" class="cred"
+            >Lie, Samuel Miracle Kristanto</a
+          >,
+          <a href="https://www.linkedin.com/in/wcahyadi/" class="cred"
+            >Willy Cahyadi</a
+          >, and
+          <a href="#" class="cred">Steven Rafael</a>
+          for being an amazing part of my team.
+        </p>
+      </div>
+    </div>
+    <div class="content">
+      <div class="content-text">
+        <h2>Tags</h2>
+        <div class="tags">
+          <span>Swift</span>
+          <span>XCode</span>
+          <span>PencilKit</span>
+          <span>WatchOS</span>
+          <span>Figma</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <h2>Download</h2>
+      <div class="btn-container">
+        <button
+          class="btn btn-color-1"
+          onclick="window.open('https://github.com/HDWKG/BloomSketch')"
+        >
+          Checkout BloomSketch
+        </button>
+        <button
+          class="btn btn-color-2"
+          onclick="window.open('https://www.canva.com/design/DAGHRNvWomc/F2onbivy9OD12TfoIEKNQg/view?utm_content=DAGHRNvWomc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hb6db73e544')"
+        >
+          Learn More
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

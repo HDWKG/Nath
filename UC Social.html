@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UC Social</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .title {
+        font-size: 3rem;
+        text-align: center;
+        color: firebrick;
+        margin-top: 0;
+      }
+      .exploreMy {
+        text-align: center;
+        font-size: 1rem;
+        margin-top: 5rem;
+      }
+      body {
+        font-family: "Inter", serif;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      p {
+        margin-top: 1rem;
+        color: rgb(85, 85, 85);
+      }
+      nav,
+      .nav-links {
+        display: flex;
+      }
+      nav {
+        justify-content: space-around;
+        align-items: center;
+        height: 17vh;
+      }
+      .nav-links {
+        gap: 2rem;
+        list-style: none;
+        font-size: 1.5rem;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+        text-decoration-color: white;
+      }
+      a:hover {
+        color: firebrick;
+        text-decoration: underline;
+        text-underline-offset: 1rem;
+        text-decoration-color: firebrick;
+      }
+      .logo:hover {
+        cursor: default;
+      }
+      .logo img {
+        display: block;
+        width: 30px;
+        height: auto;
+      }
+      .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 50px;
+        max-width: 900px;
+        margin: auto;
+      }
+      .content img {
+        width: 300px;
+        height: auto;
+        border-radius: 10px;
+      }
+      .content-text-left {
+        max-width: 500px;
+        text-align: left;
+      }
+      .content-text-right {
+        max-width: 500px;
+        text-align: right;
+      }
+      .content-text {
+        max-width: 500px;
+        text-align: center;
+      }
+      .footer {
+        text-align: center;
+        padding: 20px;
+        margin-top: 20px;
+        margin-bottom: 50px;
+      }
+      button {
+        margin-top: 20px;
+        width: 15em;
+        position: relative;
+        height: 3em;
+        border: 3px ridge firebrick;
+        outline: none;
+        background-color: transparent;
+        color: black;
+        transition: 1s;
+        border-radius: 0.3em;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      button::after {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 3%;
+        width: 95%;
+        height: 40%;
+        background-color: white;
+        transition: 0.5s;
+        transform-origin: center;
+      }
+
+      button::before {
+        content: "";
+        transform-origin: center;
+        position: absolute;
+        top: 80%;
+        left: 3%;
+        width: 95%;
+        height: 40%;
+        background-color: white;
+        transition: 0.5s;
+      }
+
+      button:hover::before,
+      button:hover::after {
+        transform: scale(0);
+      }
+
+      button:hover {
+        box-shadow: inset 0px 0px 25px snow;
+      }
+      .btn-container {
+        display: flex;
+        gap: 20px; /* Adjust the space between buttons */
+        justify-content: center; /* Centers buttons horizontally */
+      }
+      .cred {
+        color: rgb(85, 85, 85);
+        font-weight: bold;
+        text-decoration: none;
+        text-decoration-color: white;
+      }
+      .cred:hover {
+        color: firebrick;
+        text-decoration: none;
+      }
+      .tags {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .tags span {
+        display: inline-block;
+        padding: 8px 15px;
+        border: 2px solid firebrick;
+        border-radius: 50px;
+        color: firebrick;
+        font-weight: bold;
+        font-size: 14px;
+        text-align: center;
+        transition: 0.3s;
+      }
+
+      .tags span:hover {
+        background-color: firebrick;
+        color: white;
+        cursor: pointer;
+      }
+      img {
+        max-width: 150px; /* Reduce image width */
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">
+        <a href="index.html"><img src="./assets/about.png" alt="" /></a>
+      </div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#experience">Experience</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <h1 class="title">UC Social</h1>
+    <div class="content">
+      <img src="./assets/ucSocial.png" alt="Nusantara Kafe" />
+      <div class="content-text-right">
+        <h2>About UC Social</h2>
+        <p>
+          Platform for Ciputra University students to receive information on
+          committees and events with Credit Points as their reward. We strive to
+          make the best UC app for the experience of new and old students of UC.
+        </p>
+      </div>
+    </div>
+    <div class="content">
+      <div class="content-text-left">
+        <h2>App Features</h2>
+        <p>
+          <strong>Create and Share Posts:</strong> Users can easily create and
+          share posts to express their thoughts, experiences, or updates with
+          the university community. They can include text, images, and videos,
+          making content sharing more dynamic.
+        </p>
+
+        <p>
+          <strong>Browse and Interact with Committees:</strong> UC Social allows
+          users to explore various committees, view updates, and engage with the
+          content by liking, commenting, and sharing, fostering an interactive
+          environment within the
+        </p>
+      </div>
+
+      <img src="./assets/ucSocial1.png" alt="Nusantara Kafe" />
+    </div>
+    <div class="content">
+      <div class="content-text">
+        <h2>What I Learned</h2>
+        <p>
+          During the development of UC Social, I gained experience with Android
+          Studio, where I honed my skills in connecting the backend to the
+          frontend, ensuring smooth data flow and communication. I also learned
+          how to use Postman for API testing, enabling me to efficiently
+          troubleshoot and validate the interactions between the mobile
+          application and the server, improving the app's performance and user
+          experience.
+        </p>
+      </div>
+    </div>
+    <div class="content">
+      <div class="content-text">
+        <h2>Credits</h2>
+        <p>
+          Special thanks to
+          <a href="https://www.linkedin.com/in/daniel-fernando-575992250/" class="cred"
+            >Daniel Fernando</a
+          >,
+          <a
+            href="#"
+            class="cred"
+            >Steven Nelson</a
+          >,
+          <a href="https://www.linkedin.com/in/ferriogentlandy/" class="cred"
+            >Ferrio Gent Landy</a
+          >
+          for being an amazing part of my team. A special thanks as well to MNA
+          for hosting the internal competition between IMT X VCD.
+        </p>
+      </div>
+    </div>
+    <div class="content">
+      <div class="content-text">
+        <h2>Tags</h2>
+        <div class="tags">
+          <span>Android Studio</span>
+          <span>Kotlin</span>
+          <span>Postman</span>
+          <span>MySQL</span>
+          <span>Laravel</span>
+          <span>Figma</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <h2>Download</h2>
+      <div class="btn-container">
+        <!-- <button
+          class="btn btn-color-1"
+          onclick="window.open('https://drive.google.com/file/d/1gkoLUgrHHhJXdzcf-2UhEkgybCYzk7O8/view?usp=drive_link')"
+        >
+          Download Yucca!
+        </button> -->
+        <button
+          class="btn btn-color-2"
+          onclick="window.open('https://www.canva.com/design/DAGFH_dJp9s/FepNJnJAKzfUYMy6tmccfQ/view?utm_content=DAGFH_dJp9s&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h489978e267')"
+        >
+          Learn More
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
