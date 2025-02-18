@@ -45,21 +45,70 @@
   .section__pic-container {
     display: none;
   }
-  .icon{
+  .icon {
     display: none;
   }
 
   /* ABOUT */
-  #about{
+  #about {
     margin: 0;
   }
-  #experience{
+  #experience {
     margin: 0;
   }
-  #projects{
+  #projects {
     margin: 0;
   }
-  #contact{
+  #contact {
     margin: 0;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+    transition: padding-top 0.3s ease; /* Animate the padding-top of body */
+    overflow-x: hidden;
+    margin: 1rem;
+  }
+  .section__pic-container {
+    display: none;
+  }
+  #profile {
+    margin: -2rem auto;
+  }
+  #about {
+    margin: 0;
+  }
+  #experience {
+    margin: 0;
+  }
+  #projects {
+    margin: 0;
+  }
+  #contact {
+    margin: 0;
+  }
+  .about___text {
+    text-align: center;
+  }
+  .contact-info-container {
+    flex-direction: row; /* Stack items vertically */
+    width: 55%; /* Make the container wider on mobile */
+    padding: 10px; /* Add more padding for better spacing */
+    margin: 2rem auto; /* Adjust margin for better spacing */
+    gap: 15px; /* Add a gap between each contact item */
+  }
+
+  .contact-info-container p {
+    font-size: 1rem; /* Reduce font size for mobile */
+    text-align: center; /* Center-align text */
+  }
+
+  .contact-link {
+    justify-content: center; /* Center-align the contact link */
+    gap: 12px; /* Add a bit more spacing between the icon and text */
+  }
+
+  .contact-icon {
+    width: 20px; /* Reduce icon size for mobile */
   }
 }
