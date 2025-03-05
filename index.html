@@ -31,10 +31,24 @@
         </div>
         <div class="menu-links" id="menuLinks">
           <ul>
-            <li><a href="#about" onclick="toggleMenu()">About</a></li>
-            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-            <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            <li>
+              <a href="#about" onclick="toggleMenu()" class="menus">About</a>
+            </li>
+            <li>
+              <a href="#projects" onclick="toggleMenu()" class="menus"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a href="#experience" onclick="toggleMenu()" class="menus"
+                >Experience</a
+              >
+            </li>
+            <li>
+              <a href="#contact" onclick="toggleMenu()" class="menus"
+                >Contact</a
+              >
+            </li>
           </ul>
         </div>
       </div>
@@ -51,9 +65,10 @@
         <div class="btn-container">
           <button
             class="btn btn-color-1"
-            onclick="window.open('./assets/resume.pdf')"
+            onclick="location.href='#projects'"
           >
-            Download CV
+          <!-- onclick="window.open('./assets/resume.pdf')" -->
+            My Projects
           </button>
           <button class="btn btn-color-2" onclick="location.href='#contact'">
             Contact Info
@@ -148,9 +163,7 @@
         </div>
         <div class="experience-item">
           <div class="experience-date">February 2024 - June 2024</div>
-          <div class="experience-title">
-            Web Development Assistant Lecturer
-          </div>
+          <div class="experience-title">Web Development Assistant Lecturer</div>
           <div class="experience-description">
             As a Web Development Assistant Lecturer, I am passionate about
             helping students master the core skills and concepts of web
@@ -163,8 +176,8 @@
             critically and solve real-world challenges in web development.
           </div>
           <div class="experience-skills">
-            Web Development · Laravel · HTML · Cascading Style Sheets
-            (CSS) · JavaScript
+            Web Development · Laravel · HTML · Cascading Style Sheets (CSS) ·
+            JavaScript
           </div>
         </div>
 
@@ -197,74 +210,76 @@
       />
     </section>
     <section id="projects">
-      <p class="exploreMy">Browse My Recent</p>
+      <p class="exploreMy">Click To View My</p>
       <h1 class="about__title">Projects</h1>
       <div class="projects-container">
         <div class="project-card">
-          <div class="project-image">
-            <img src="./assets/nusantara.png" alt="Project 1" />
-          </div>
-          <div class="project-text">
-            <h3>
-              <a href="NusantaraKafe.html">Nusantara Kafe</a>
-            </h3>
-            <p>
-              Nusantara Kafe is a restaurant management game where you help Ina
-              and Chef Toni serve customers and grow their business.
-            </p>
-          </div>
+          <a href="NusantaraKafe.html" class="project-link">
+            <div class="project-image">
+              <img src="./assets/nusantara.png" alt="Nusantara Kafe" />
+            </div>
+            <div class="project-text">
+              <h3>Nusantara Kafe</h3>
+              <p>
+                Nusantara Kafe is a restaurant management game where you help Ina and
+                Chef Toni serve customers and grow their business.
+              </p>
+            </div>
+          </a>
         </div>
-
+        
         <div class="project-card">
-          <div class="project-image">
-            <img src="./assets/yuuka.jpg" alt="Project 2" />
-          </div>
-          <div class="project-text">
-            <h3><a href="YuccaAI.html">Yucca AI</a></h3>
-            <p>
-              Yucca AI is an interactive chatbot designed to provide fast and
-              accurate answers about UC, scholarships, and New Student
-              Admissions using advanced AI and API integrations.
-            </p>
-          </div>
+          <a href="YuccaAI.html" class="project-link">
+            <div class="project-image">
+              <img src="./assets/yuuka.jpg" alt="Yucca AI" />
+            </div>
+            <div class="project-text">
+              <h3>Yucca AI</h3>
+              <p>
+                Yucca AI is an interactive chatbot designed to provide fast and
+                accurate answers about UC, scholarships, and New Student Admissions
+                using advanced AI and API integrations.
+              </p>
+            </div>
+          </a>
         </div>
-
+        
         <div class="project-card">
-          <div class="project-image">
-            <img src="./assets/bloom.jpg" alt="BloomSketch" />
-          </div>
-          <div class="project-text">
-            <h3>
-              <a href="BloomSketch.html">BloomSketch</a>
-            </h3>
-            <p>
-              BloomSketch is an interactive art app that inspires creativity in
-              children through drawing tools, progress tracking, and engaging
-              educational features.
-            </p>
-          </div>
+          <a href="BloomSketch.html" class="project-link">
+            <div class="project-image">
+              <img src="./assets/bloom.jpg" alt="BloomSketch" />
+            </div>
+            <div class="project-text">
+              <h3>BloomSketch</h3>
+              <p>
+                BloomSketch is an interactive art app that inspires creativity in
+                children through drawing tools, progress tracking, and engaging
+                educational features.
+              </p>
+            </div>
+          </a>
         </div>
-
+        
         <div class="project-card">
-          <div class="project-image">
-            <img src="./assets/ucSocial.png" alt="Project 4" />
-          </div>
-          <div class="project-text">
-            <h3>
-              <a href="UC Social.html">UC Social</a>
-            </h3>
-            <p>
-              UC Social is a platform that connects university students,
-              allowing them to share posts, explore committees, and interact
-              with the campus community.
-            </p>
-          </div>
-        </div>
+          <a href="UC Social.html" class="project-link">
+            <div class="project-image">
+              <img src="./assets/ucSocial.png" alt="UC Social" />
+            </div>
+            <div class="project-text">
+              <h3>UC Social</h3>
+              <p>
+                UC Social is a platform that connects university students, allowing
+                them to share posts, explore committees, and interact with the campus
+                community.
+              </p>
+            </div>
+          </a>
+        </div>        
       </div>
 
-      <!-- <div class="view-all-projects">
-        <a href="projects.html">View All Projects</a>
-      </div> -->
+      <div class="view-all-projects">
+        <h3><a href="projects.html">View All Projects</a></h3>
+      </div>
     </section>
     <section id="contact">
       <p class="exploreMy">Get In Touch</p>

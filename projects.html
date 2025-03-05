@@ -104,7 +104,7 @@
         text-decoration: none;
         text-decoration-color: white;
       }
-      a:hover {
+      .menus a:hover {
         color: firebrick;
         text-decoration: underline;
         text-underline-offset: 1rem;
@@ -125,74 +125,98 @@
       <div class="logo"><img src="./assets/about.png" alt="" /></div>
       <div>
         <ul class="nav-links">
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#experience">Experience</a></li>
-          <li><a href="index.html#projects">Projects</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="index.html#about" class="menus">About</a></li>
+          <li><a href="index.html#experience" class="menus">Experience</a></li>
+          <li><a href="index.html#projects" class="menus">Projects</a></li>
+          <li><a href="index.html#contact" class="menus">Contact</a></li>
         </ul>
       </div>
     </nav>
-    <p class="exploreMy">View My</p>
-    <h1 class="title">Projects</h1>
-    <div class="projects-container">
-      <div class="project-card">
-        <div class="project-image">
-          <img src="./assets/nusantara.png" alt="Project 1" />
+    <section id="projects">
+      <h1 class="title">Projects</h1>
+      <div class="projects-container">
+        <div class="project-card">
+          <a href="NusantaraKafe.html" class="project-link">
+            <div class="project-image">
+              <img src="./assets/nusantara.png" alt="Nusantara Kafe" />
+            </div>
+            <div class="project-text">
+              <h3>Nusantara Kafe</h3>
+              <p>
+                Nusantara Kafe is a restaurant management game where you help
+                Ina and Chef Toni serve customers and grow their business.
+              </p>
+            </div>
+          </a>
         </div>
-        <div class="project-text">
-          <h3>
-            <a href="NusantaraKafe.html">Nusantara Kafe</a>
-          </h3>
-          <p>
-            Nusantara Kafe is a restaurant management game where you help Ina
-            and Chef Toni serve customers and grow their business.
-          </p>
+
+        <div class="project-card">
+          <a href="YuccaAI.html" class="project-link">
+            <div class="project-image">
+              <img src="./assets/yuuka.jpg" alt="Yucca AI" />
+            </div>
+            <div class="project-text">
+              <h3>Yucca AI</h3>
+              <p>
+                Yucca AI is an interactive chatbot designed to provide fast and
+                accurate answers about UC, scholarships, and New Student
+                Admissions using advanced AI and API integrations.
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="BloomSketch.html" class="project-link">
+            <div class="project-image">
+              <img src="./assets/bloom.jpg" alt="BloomSketch" />
+            </div>
+            <div class="project-text">
+              <h3>BloomSketch</h3>
+              <p>
+                BloomSketch is an interactive art app that inspires creativity
+                in children through drawing tools, progress tracking, and
+                engaging educational features.
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="UC Social.html" class="project-link">
+            <div class="project-image">
+              <img src="./assets/ucSocial.png" alt="UC Social" />
+            </div>
+            <div class="project-text">
+              <h3>UC Social</h3>
+              <p>
+                UC Social is a platform that connects university students,
+                allowing them to share posts, explore committees, and interact
+                with the campus community.
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="project-card">
+          <a href="presentea.html" class="project-link">
+            <div class="project-image">
+              <img src="./assets/logopresentea.jpg" alt="presentea" />
+            </div>
+            <div class="project-text">
+              <h3>Presentea</h3>
+              <p>
+                Presentea is an AI-powered app that analyzes body language and
+                speech to grade presentations, detecting filler words like "uhm"
+                and "ahh" for real-time feedback.
+              </p>
+            </div>
+          </a>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-image">
-          <img src="./assets/yuuka.jpg" alt="Project 2" />
-        </div>
-        <div class="project-text">
-          <h3>
-            <a href="YuccaAI.html">YuccaAI</a>
-          </h3>
-          <p>
-            Yucca AI is an interactive chatbot designed to provide fast and
-            accurate answers about UC, scholarships, and New Student Admissions
-            using advanced AI and API integrations.
-          </p>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-image">
-          <img src="./assets/bloom.jpg" alt="Project 3" />
-        </div>
-        <div class="project-text">
-          <h3>
-            <a href="BloomSketch.html">BloomSketch</a>
-          </h3>
-          <p>
-            BloomSketch is an interactive art app that inspires creativity in
-            children through drawing tools, progress tracking, and engaging
-            educational features.
-          </p>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-image">
-          <img src="./assets/pic3.jpg" alt="Project 3" />
-        </div>
-        <div class="project-text">
-          <h3>
-            <a href="#project3-details">Project 3: Game Development</a>
-          </h3>
-          <p>
-            An exciting 2D side-scroller game developed in Unity with engaging
-            mechanics.
-          </p>
-        </div>
-      </div>
-    </div>
+
+      <!-- <div class="view-all-projects">
+        <a href="projects.html">View All Projects</a>
+      </div> -->
+    </section>
   </body>
 </html>
