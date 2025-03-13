@@ -404,6 +404,35 @@ button:hover {
   margin-top: 10px;
   color: #555;
 }
+.tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.tags span {
+  display: inline-block;
+  padding: 10px 18px;
+  border: 1.5px solid firebrick;
+  border-radius: 25px;
+  color: firebrick;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tags span:hover {
+  background-color: firebrick;
+  color: white;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+
 
 .project-text h3:hover {
   color: firebrick;
