@@ -3,205 +3,655 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yucca AI</title>
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-
+    <title>Yucca AI - Nathan Darrell</title>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+      
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
-      .title {
-        font-size: 3rem;
-        text-align: center;
-        color: firebrick;
-        margin-top: 0;
-      }
-      .exploreMy {
-        text-align: center;
-        font-size: 1rem;
-        margin-top: 5rem;
-      }
+
       body {
-        font-family: "Inter", serif;
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background-attachment: fixed;
+        color: #333;
+        overflow-x: hidden;
       }
+
       html {
         scroll-behavior: smooth;
       }
-      p {
-        margin-top: 1rem;
-        color: rgb(85, 85, 85);
+
+      /* Animated Background */
+      .bg-decoration {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        pointer-events: none;
       }
-      nav,
+
+      .circle {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        animation: float 20s infinite;
+      }
+
+      .circle-1 {
+        width: 350px;
+        height: 350px;
+        top: 15%;
+        left: 10%;
+        animation-delay: 0s;
+      }
+
+      .circle-2 {
+        width: 250px;
+        height: 250px;
+        top: 60%;
+        right: 15%;
+        animation-delay: 7s;
+      }
+
+      .circle-3 {
+        width: 180px;
+        height: 180px;
+        bottom: 20%;
+        left: 30%;
+        animation-delay: 14s;
+      }
+
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0) scale(1);
+          opacity: 0.3;
+        }
+        50% {
+          transform: translateY(-30px) scale(1.1);
+          opacity: 0.6;
+        }
+      }
+
+      /* Navigation */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 10%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+
+      .logo img {
+        height: 50px;
+        width: auto;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+
+      .logo img:hover {
+        transform: rotate(360deg);
+      }
+
       .nav-links {
         display: flex;
-      }
-      nav {
-        justify-content: space-around;
-        align-items: center;
-        height: 17vh;
-      }
-      .nav-links {
-        gap: 2rem;
         list-style: none;
-        font-size: 1.5rem;
+        gap: 2.5rem;
       }
-      a {
-        color: black;
+
+      .nav-links a {
         text-decoration: none;
-        text-decoration-color: white;
+        color: #333;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        position: relative;
+        padding: 0.5rem 0;
       }
-      a:hover {
-        color: firebrick;
-        text-decoration: underline;
-        text-underline-offset: 1rem;
-        text-decoration-color: firebrick;
+
+      .nav-links a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 3px;
+        bottom: 0;
+        left: 50%;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+        border-radius: 2px;
       }
-      .logo:hover {
-        cursor: default;
+
+      .nav-links a:hover::after {
+        width: 100%;
       }
-      .logo img {
-        display: block;
+
+      .nav-links a:hover {
+        color: #667eea;
+      }
+
+      /* Mobile Navigation */
+      #mobile-nav {
+        display: none;
+      }
+
+      .hamburger-menu {
+        position: relative;
+      }
+
+      .hamburger-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 24px;
         width: 30px;
-        height: auto;
+        cursor: pointer;
       }
+
+      .hamburger-icon span {
+        width: 100%;
+        height: 3px;
+        background-color: #333;
+        transition: all 0.3s ease-in-out;
+        border-radius: 2px;
+      }
+
+      .hamburger-icon.open span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+      }
+
+      .hamburger-icon.open span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger-icon.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -8px);
+      }
+
+      .menu-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        width: 250px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        border-radius: 10px;
+        margin-top: 10px;
+      }
+
+      .menu-links.open {
+        max-height: 400px;
+      }
+
+      .menu-links ul {
+        list-style: none;
+        padding: 1rem 0;
+      }
+
+      .menu-links li {
+        padding: 1rem 2rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .menu-links li:last-child {
+        border-bottom: none;
+      }
+
+      .menu-links a {
+        text-decoration: none;
+        color: #333;
+        font-size: 1.1rem;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .menu-links a:hover {
+        color: #667eea;
+      }
+
+      /* Hero Section */
+      .hero {
+        padding-top: 140px;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        margin-bottom: 4rem;
+        animation: fadeInDown 1s ease;
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .title {
+        font-size: 4rem;
+        color: white;
+        font-weight: 800;
+        text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+        margin-bottom: 1rem;
+      }
+
+      .project-meta {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .meta-item {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        padding: 0.8rem 1.5rem;
+        border-radius: 30px;
+        color: white;
+        font-weight: 600;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      /* Content Sections */
       .content {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 20px;
-        padding: 50px;
-        max-width: 900px;
-        margin: auto;
+        gap: 4rem;
+        padding: 3rem 10%;
+        max-width: 1400px;
+        margin: 3rem auto;
+        background: white;
+        border-radius: 25px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        position: relative;
+        z-index: 1;
+        animation: fadeInUp 0.8s ease;
       }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .content:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
       .content img {
-        width: 300px;
+        width: 400px;
         height: auto;
-        border-radius: 10px;
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        transition: transform 0.4s ease;
       }
+
+      .content img:hover {
+        transform: scale(1.05) rotate(-2deg);
+      }
+
+      .content-text-left,
+      .content-text-right,
+      .content-text {
+        max-width: 600px;
+      }
+
       .content-text-left {
-        max-width: 500px;
         text-align: left;
       }
+
       .content-text-right {
-        max-width: 500px;
         text-align: right;
       }
+
       .content-text {
-        max-width: 500px;
         text-align: center;
+        max-width: 800px;
       }
-      .footer {
-        text-align: center;
-        padding: 20px;
-        margin-top: 20px;
-        margin-bottom: 50px;
-      }
-      button {
-        margin-top: 20px;
-        width: 15em;
+
+      .content h2 {
+        font-size: 2.2rem;
+        color: #2c3e50;
+        margin-bottom: 1.5rem;
         position: relative;
-        height: 3em;
-        border: 3px ridge firebrick;
-        outline: none;
-        background-color: transparent;
-        color: black;
-        transition: 1s;
-        border-radius: 0.3em;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
+        display: inline-block;
       }
 
-      button::after {
-        content: "";
+      .content-text-left h2::after,
+      .content-text-right h2::after {
+        content: '';
         position: absolute;
-        top: -10px;
-        left: 3%;
-        width: 95%;
-        height: 40%;
-        background-color: white;
-        transition: 0.5s;
-        transform-origin: center;
+        bottom: -8px;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        border-radius: 2px;
       }
 
-      button::before {
-        content: "";
-        transform-origin: center;
+      .content-text-left h2::after {
+        left: 0;
+      }
+
+      .content-text-right h2::after {
+        right: 0;
+      }
+
+      .content-text h2::after {
+        content: '';
         position: absolute;
-        top: 80%;
-        left: 3%;
-        width: 95%;
-        height: 40%;
-        background-color: white;
-        transition: 0.5s;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        border-radius: 2px;
       }
 
-      button:hover::before,
-      button:hover::after {
-        transform: scale(0);
+      .content p {
+        font-size: 1.15rem;
+        line-height: 1.9;
+        color: #555;
+        margin-top: 1rem;
       }
 
-      button:hover {
-        box-shadow: inset 0px 0px 25px snow;
-      }
-      .btn-container {
-        display: flex;
-        gap: 20px; /* Adjust the space between buttons */
-        justify-content: center; /* Centers buttons horizontally */
-      }
-      .cred {
-        color: rgb(85, 85, 85);
-        font-weight: bold;
-        text-decoration: none;
-        text-decoration-color: white;
-      }
-      .cred:hover {
-        color: firebrick;
-        text-decoration: none;
-      }
+      /* Tags Section */
       .tags {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 10px;
+        gap: 1rem;
+        margin-top: 2rem;
       }
 
       .tags span {
         display: inline-block;
-        padding: 8px 15px;
-        border: 2px solid firebrick;
-        border-radius: 50px;
-        color: firebrick;
-        font-weight: bold;
-        font-size: 14px;
-        text-align: center;
-        transition: 0.3s;
+        padding: 0.8rem 1.5rem;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        border-radius: 30px;
+        color: white;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        cursor: pointer;
       }
 
       .tags span:hover {
-        background-color: firebrick;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.5);
+      }
+
+      /* Credits Links */
+      .cred {
+        color: #667eea;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .cred::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        transition: width 0.3s ease;
+      }
+
+      .cred:hover::after {
+        width: 100%;
+      }
+
+      .cred:hover {
+        color: #764ba2;
+      }
+
+      /* Footer/Download Section */
+      .footer {
+        text-align: center;
+        padding: 4rem 2rem;
+        margin: 5rem auto 3rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .footer h2 {
         color: white;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-container {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+      }
+
+      .download-btn {
+        padding: 1.5rem 3rem;
+        background: white;
+        color: #667eea;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.2rem;
+        font-weight: 700;
         cursor: pointer;
+        transition: all 0.4s ease;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        overflow: hidden;
       }
-      img {
-        max-width: 150px; /* Reduce image width */
-        height: auto;
+
+      .download-btn::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+        z-index: -1;
       }
-      #mobile-nav {
-        display: none;
+
+      .download-btn:hover::before {
+        width: 400px;
+        height: 400px;
+      }
+
+      .download-btn:hover {
+        color: white;
+        transform: translateY(-5px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Back Button */
+      .back-btn {
+        display: inline-block;
+        margin: 2rem auto;
+        padding: 1rem 2.5rem;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .back-btn:hover {
+        background: white;
+        color: #667eea;
+        transform: translateY(-3px);
+      }
+
+      .back-btn::before {
+        content: '← ';
+        margin-right: 0.5rem;
+      }
+
+      .back-container {
+        text-align: center;
+        padding: 2rem 0;
+      }
+
+      /* Responsive Design */
+      @media screen and (max-width: 768px) {
+        #desktop-nav {
+          display: none;
+        }
+
+        #mobile-nav {
+          display: flex;
+        }
+
+        nav {
+          padding: 1.5rem 5%;
+        }
+
+        .hero {
+          padding-top: 120px;
+          margin-bottom: 2rem;
+        }
+
+        .title {
+          font-size: 2.5rem;
+        }
+
+        .project-meta {
+          gap: 1rem;
+        }
+
+        .meta-item {
+          font-size: 0.9rem;
+          padding: 0.6rem 1.2rem;
+        }
+
+        .content {
+          flex-direction: column !important;
+          padding: 2rem 5%;
+          gap: 2rem;
+          margin: 2rem auto;
+        }
+
+        .content img {
+          width: 100%;
+          max-width: 350px;
+        }
+
+        .content-text-left,
+        .content-text-right {
+          text-align: center;
+        }
+
+        .content-text-left h2::after,
+        .content-text-right h2::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .content h2 {
+          font-size: 1.8rem;
+        }
+
+        .content p {
+          font-size: 1.05rem;
+        }
+
+        .tags {
+          gap: 0.8rem;
+        }
+
+        .tags span {
+          font-size: 0.85rem;
+          padding: 0.6rem 1.2rem;
+        }
+
+        .footer h2 {
+          font-size: 2rem;
+        }
+
+        .download-btn {
+          font-size: 1rem;
+          padding: 1.2rem 2.5rem;
+        }
+
+        .btn-container {
+          gap: 1rem;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .title {
+          font-size: 2rem;
+        }
+
+        .content h2 {
+          font-size: 1.5rem;
+        }
+
+        .content p {
+          font-size: 0.95rem;
+        }
+
+        .download-btn {
+          font-size: 0.9rem;
+          padding: 1rem 2rem;
+        }
       }
     </style>
-    <link rel="stylesheet" href="responsive.css" />
-
   </head>
   <body>
+    <!-- Background Decoration -->
+    <div class="bg-decoration">
+      <div class="circle circle-1"></div>
+      <div class="circle circle-2"></div>
+      <div class="circle circle-3"></div>
+    </div>
+
+    <!-- Desktop Navigation -->
     <nav id="desktop-nav">
       <div class="logo">
-        <a href="index.html"><img src="./assets/about.png" alt="" /></a>
+        <a href="index.html"><img src="./assets/about.png" alt="Logo" /></a>
       </div>
       <div>
         <ul class="nav-links">
@@ -212,29 +662,47 @@
         </ul>
       </div>
     </nav>
+
+    <!-- Mobile Navigation -->
     <nav id="mobile-nav">
       <div class="logo">
-        <a href="index.html"><img src="./assets/about.png" alt="" /></a>
+        <a href="index.html"><img src="./assets/about.png" alt="Logo" /></a>
       </div>
-      <div class="hamburger-menu" onclick="toggleMenu()">
-        <div class="hamburger-icon">
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
           <span></span>
           <span></span>
           <span></span>
         </div>
-      </div>
-      <div class="menu-links" id="navLinks">
-        <ul>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#experience">Experience</a></li>
-          <li><a href="index.html#projects">Projects</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
+        <div class="menu-links" id="navLinks">
+          <ul>
+            <li><a href="index.html#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="index.html#experience" onclick="toggleMenu()">Experience</a></li>
+            <li><a href="index.html#projects" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
-    <h1 class="title">Yucca AI</h1>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <h1 class="title">Yucca AI</h1>
+      <div class="project-meta">
+        <span class="meta-item">🤖 AI Chatbot</span>
+        <span class="meta-item">📅 January 2025</span>
+        <span class="meta-item">👥 Team Project</span>
+      </div>
+    </div>
+
+    <!-- Back Button -->
+    <div class="back-container">
+      <a href="projects.html" class="back-btn">Back to Projects</a>
+    </div>
+
+    <!-- Content Sections -->
     <div class="content">
-      <img src="./assets/yuuka.jpg" alt="Nusantara Kafe" />
+      <img src="./assets/yuuka.jpg" alt="Yucca AI" />
       <div class="content-text-right">
         <h2>About Yucca</h2>
         <p>
@@ -247,6 +715,7 @@
         </p>
       </div>
     </div>
+
     <div class="content">
       <div class="content-text-left">
         <h2>App Features</h2>
@@ -260,8 +729,9 @@
           be provided using the AI Voice that has been generated.
         </p>
       </div>
-      <img src="./assets/yuuka1.jpg" alt="Nusantara Kafe" />
+      <img src="./assets/yuuka1.jpg" alt="Yucca AI Interface" />
     </div>
+
     <div class="content">
       <div class="content-text">
         <h2>What I Learned</h2>
@@ -273,6 +743,7 @@
         </p>
       </div>
     </div>
+
     <div class="content">
       <div class="content-text">
         <h2>Credits</h2>
@@ -297,9 +768,10 @@
         </p>
       </div>
     </div>
+
     <div class="content">
       <div class="content-text">
-        <h2>Tags</h2>
+        <h2>Technologies Used</h2>
         <div class="tags">
           <span>Unity</span>
           <span>LangChain</span>
@@ -310,23 +782,57 @@
         </div>
       </div>
     </div>
+
+    <!-- Download Section -->
     <div class="footer">
-      <h2>Download</h2>
+      <h2>Try Yucca AI</h2>
       <div class="btn-container">
         <button
-          class="btn btn-color-1"
+          class="download-btn"
           onclick="window.open('https://drive.google.com/file/d/1gkoLUgrHHhJXdzcf-2UhEkgybCYzk7O8/view?usp=drive_link')"
         >
-          Download Yucca!
+          📥 Download Yucca
         </button>
         <button
-          class="btn btn-color-2"
+          class="download-btn"
           onclick="window.open('https://www.canva.com/design/DAGbkSMYmrE/y-nyGhJjsxdqM4-NHsf1AQ/view?utm_content=DAGbkSMYmrE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hfb297c8871')"
         >
-          Learn More
+          📖 Learn More
         </button>
       </div>
     </div>
+
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById('navLinks');
+        const icon = document.querySelector('.hamburger-icon');
+        menu.classList.toggle('open');
+        icon.classList.toggle('open');
+      }
+
+      // Add scroll effect to navbar
+      window.addEventListener('scroll', function() {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 50) {
+          nav.style.padding = '1rem 10%';
+        } else {
+          nav.style.padding = '1.5rem 10%';
+        }
+      });
+
+      // Intersection Observer for fade-in animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.content').forEach(el => {
+        observer.observe(el);
+      });
+    </script>
   </body>
-  <script src="script.js"></script>
 </html>

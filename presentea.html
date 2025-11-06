@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <title>UC Social - Nathan Darrell</title>
+    <title>Presentea - Nathan Darrell</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
-
+      
       * {
         margin: 0;
         padding: 0;
@@ -69,8 +69,7 @@
       }
 
       @keyframes float {
-        0%,
-        100% {
+        0%, 100% {
           transform: translateY(0) scale(1);
           opacity: 0.3;
         }
@@ -124,7 +123,7 @@
       }
 
       .nav-links a::after {
-        content: "";
+        content: '';
         position: absolute;
         width: 0;
         height: 3px;
@@ -347,7 +346,7 @@
 
       .content-text-left h2::after,
       .content-text-right h2::after {
-        content: "";
+        content: '';
         position: absolute;
         bottom: -8px;
         width: 60px;
@@ -365,7 +364,7 @@
       }
 
       .content-text h2::after {
-        content: "";
+        content: '';
         position: absolute;
         bottom: -8px;
         left: 50%;
@@ -381,11 +380,6 @@
         line-height: 1.9;
         color: #555;
         margin-top: 1rem;
-      }
-
-      .content p strong {
-        color: #667eea;
-        font-weight: 700;
       }
 
       /* Tags Section */
@@ -425,7 +419,7 @@
       }
 
       .cred::after {
-        content: "";
+        content: '';
         position: absolute;
         width: 0;
         height: 2px;
@@ -485,7 +479,7 @@
       }
 
       .download-btn::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 50%;
         left: 50%;
@@ -531,7 +525,7 @@
       }
 
       .back-btn::before {
-        content: "← ";
+        content: '← ';
         margin-right: 0.5rem;
       }
 
@@ -683,17 +677,9 @@
         <div class="menu-links" id="navLinks">
           <ul>
             <li><a href="index.html#about" onclick="toggleMenu()">About</a></li>
-            <li>
-              <a href="index.html#experience" onclick="toggleMenu()"
-                >Experience</a
-              >
-            </li>
-            <li>
-              <a href="index.html#projects" onclick="toggleMenu()">Projects</a>
-            </li>
-            <li>
-              <a href="index.html#contact" onclick="toggleMenu()">Contact</a>
-            </li>
+            <li><a href="index.html#experience" onclick="toggleMenu()">Experience</a></li>
+            <li><a href="index.html#projects" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -701,10 +687,10 @@
 
     <!-- Hero Section -->
     <div class="hero">
-      <h1 class="title">UC Social</h1>
+      <h1 class="title">Presentea</h1>
       <div class="project-meta">
-        <span class="meta-item">📱 Mobile App (IOS)</span>
-        <span class="meta-item">📅 May - June 2024</span>
+        <span class="meta-item">🤖 AI-Powered App</span>
+        <span class="meta-item">📅 2025</span>
         <span class="meta-item">👥 Team Project</span>
       </div>
     </div>
@@ -716,40 +702,55 @@
 
     <!-- Content Sections -->
     <div class="content">
-      <img src="./assets/bloom1.jpg" alt="bsketch" />
+      <img src="./assets/logopresentea.jpg" alt="Presentea Logo" />
       <div class="content-text-right">
-        <h2>About Bloom Sketch</h2>
+        <h2>What is Presentea</h2>
         <p>
-          Bloom Sketch is a creative drawing app that provides a fun and
-          engaging experience for kids to learn and express their creativity.
+          Presentea is an AI-powered presentation evaluation app that helps
+          users improve their public speaking skills. It analyzes body language,
+          facial expressions, and vocal delivery, detecting filler words like
+          "uhm" and "ahh" to provide real-time feedback and scoring. By offering
+          insights into confidence, clarity, and engagement, Presentea enables
+          users to refine their speaking abilities and deliver more polished,
+          professional presentations.
         </p>
       </div>
     </div>
 
     <div class="content">
       <div class="content-text-left">
-        <h2>App Features</h2>
+        <h2>Features</h2>
         <p>
-          <strong>Comprehensive Drawing Tools:</strong> A wide range of brushes
-          and tools for creative expression, including customizable color
-          palettes.
+          Presentea helps users improve their public speaking by analyzing body
+          language and detecting filler words like "uhm" and "ahh." It provides
+          real-time feedback on posture, gestures, and eye contact, ensuring a
+          confident and engaging presentation. Additionally, it assesses speech
+          clarity, measuring tone, pace, and articulation to refine delivery.
         </p>
         <p>
-          <strong>Motivational Progress Tracking:</strong> A unique tree growth
-          and streaks system visually represents users' artistic progress,
-          motivating them to keep improving.
+          The app generates detailed scores and reports, offering insights and
+          personalized suggestions for improvement. Users can track their
+          progress over multiple presentations, making it an ideal tool for
+          students, professionals, and anyone looking to enhance their speaking
+          skills.
         </p>
       </div>
-      <img src="./assets/bloom2.png" alt="UC Social Features" />
+      <img src="./assets/presentf.jpg" alt="Presentea Features" />
     </div>
 
     <div class="content">
       <div class="content-text">
         <h2>What I Learned</h2>
         <p>
-          I learned how to use WatchOS, code in Swift, create SwiftUI
-          interfaces, and utilize PencilKit from Apple to create the drawing
-          aspect for kids to draw and learn from.
+          During the development of Presentea, I improved my skills in
+          implementing Teachable Machine, which allowed me to explore AI-powered
+          analysis and train models to recognize body language patterns and
+          filler words. Additionally, I gained experience in data processing and
+          real-time feedback systems, learning how to interpret AI predictions
+          and present them in a user-friendly way. The project reinforced the
+          importance of usability and accuracy, ensuring that Presentea provides
+          meaningful insights to help users improve their presentation skills
+          effectively.
         </p>
       </div>
     </div>
@@ -760,17 +761,26 @@
         <p>
           Special thanks to
           <a
-            href="https://www.linkedin.com/in/bernicko-rphl-25474524b/"
+            href="https://www.linkedin.com/in/gerald-lienardi-502427256/"
             class="cred"
-            >Bernicko Raphael</a
+            >Gerald Gavin Lienardi</a
           >,
-          <a href="https://www.linkedin.com/in/samuelmiracle/" class="cred"
-            >Lie, Samuel Miracle Kristanto</a
+          <a
+            href="https://www.linkedin.com/in/christian-tanjung-79a09b257/"
+            class="cred"
+            >Christian Tanjung</a
           >,
-          <a href="https://www.linkedin.com/in/wcahyadi/" class="cred"
-            >Willy Cahyadi</a
+          <a href="https://www.linkedin.com/in/gabriela-sihutomo/" class="cred"
+            >Gabriela Sihutomo</a
+          >,
+          <a
+            href="https://www.linkedin.com/in/jason-miracle-gunawan-515961256/"
+            class="cred"
+            >Jason Miracle Gunawan</a
           >, and
-          <a href="#" class="cred">Steven Rafael</a>
+          <a href="https://www.linkedin.com/in/karyna-sanjaya/" class="cred"
+            >Karyna Budi Sanjaya</a
+          >
           for being an amazing part of my team.
         </p>
       </div>
@@ -780,11 +790,11 @@
       <div class="content-text">
         <h2>Technologies Used</h2>
         <div class="tags">
-          <span>Swift</span>
-          <span>XCode</span>
-          <span>PencilKit</span>
-          <span>WatchOS</span>
-          <span>Figma</span>
+          <span>Teachable Machine</span>
+          <span>Machine Learning</span>
+          <span>Python</span>
+          <span>Voice Detection</span>
+          <span>Gesture Detection</span>
         </div>
       </div>
     </div>
@@ -795,51 +805,48 @@
       <div class="btn-container">
         <button
           class="download-btn"
-          onclick="window.open('https://www.canva.com/design/DAGHRNvWomc/F2onbivy9OD12TfoIEKNQg/view?utm_content=DAGHRNvWomc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hb6db73e544')"
+          onclick="window.open('https://www.instagram.com/reel/DDLgmkYyoZi/?igsh=MXQybGttY3l5ZHNpdg==')"
         >
-          📖 View Presentation
+          📱 Instagram
         </button>
         <button
           class="download-btn"
-          onclick="window.open('https://github.com/HDWKG/BloomSketch')"
+          onclick="window.open('https://www.ciputra.ac.id/presentea-aplikasi-presentasi-berbasis-ai-karya-mahasiswa-informatika-uc/')"
         >
-          🔎 Checkout Us Out
+          🎓 Ciputra UC
         </button>
       </div>
     </div>
 
     <script>
       function toggleMenu() {
-        const menu = document.getElementById("navLinks");
-        const icon = document.querySelector(".hamburger-icon");
-        menu.classList.toggle("open");
-        icon.classList.toggle("open");
+        const menu = document.getElementById('navLinks');
+        const icon = document.querySelector('.hamburger-icon');
+        menu.classList.toggle('open');
+        icon.classList.toggle('open');
       }
 
       // Add scroll effect to navbar
-      window.addEventListener("scroll", function () {
-        const nav = document.querySelector("nav");
+      window.addEventListener('scroll', function() {
+        const nav = document.querySelector('nav');
         if (window.scrollY > 50) {
-          nav.style.padding = "1rem 10%";
+          nav.style.padding = '1rem 10%';
         } else {
-          nav.style.padding = "1.5rem 10%";
+          nav.style.padding = '1.5rem 10%';
         }
       });
 
       // Intersection Observer for fade-in animations
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.style.opacity = "1";
-              entry.target.style.transform = "translateY(0)";
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.1 });
 
-      document.querySelectorAll(".content").forEach((el) => {
+      document.querySelectorAll('.content').forEach(el => {
         observer.observe(el);
       });
     </script>

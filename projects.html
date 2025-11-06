@@ -3,126 +3,562 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All Projects</title>
+    <title>All Projects - Nathan Darrell</title>
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+      
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        text-align: center;
       }
-      .title {
-        font-size: 3rem;
-        text-align: center;
-        color: firebrick;
-        margin-top: 0;
-      }
-      .exploreMy {
-        text-align: center;
-        font-size: 1rem;
-        margin-top: 5rem;
-      }
+
       body {
-        font-family: "Inter", serif;
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background-attachment: fixed;
+        color: #333;
+        overflow-x: hidden;
       }
 
       html {
         scroll-behavior: smooth;
       }
-      p {
-        color: rgb(85, 85, 85);
-      }
-      .projects-container {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-        flex-wrap: wrap;
-        padding: 40px;
-      }
-      .project-card {
-        display: flex;
-        flex-direction: column;
-        width: 300px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        overflow: hidden;
-        margin: 10px;
-        transition: transform 0.3s ease;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        background-color: white;
-      }
-      .project-card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 16px rgba(200, 0, 0, 0.2);
-      }
-      .project-image img {
+
+      /* Animated Background */
+      .bg-decoration {
+        position: fixed;
         width: 100%;
-        height: 150px;
-        object-fit: cover;
-      }
-      .project-text {
-        padding: 20px;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-      .project-text h3 a {
-        color: #333;
-        text-decoration: none;
-        font-size: 1.2em;
-        font-weight: bold;
-        transition: color 0.3s ease;
-      }
-      .project-text h3 a:hover {
-        color: firebrick;
-      }
-      .project-text p {
-        margin-top: 10px;
-        color: #555;
-      }
-      nav,
-      .nav-links {
-        display: flex;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        pointer-events: none;
       }
 
+      .circle {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        animation: float 20s infinite;
+      }
+
+      .circle-1 {
+        width: 400px;
+        height: 400px;
+        top: 10%;
+        left: 5%;
+        animation-delay: 0s;
+      }
+
+      .circle-2 {
+        width: 300px;
+        height: 300px;
+        top: 50%;
+        right: 10%;
+        animation-delay: 5s;
+      }
+
+      .circle-3 {
+        width: 200px;
+        height: 200px;
+        bottom: 15%;
+        left: 40%;
+        animation-delay: 10s;
+      }
+
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0) scale(1);
+          opacity: 0.3;
+        }
+        50% {
+          transform: translateY(-30px) scale(1.1);
+          opacity: 0.6;
+        }
+      }
+
+      /* Navigation */
       nav {
-        justify-content: space-around;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
-        height: 17vh;
+        padding: 1.5rem 10%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        transition: all 0.3s ease;
       }
-      .nav-links {
-        gap: 2rem;
-        list-style: none;
-        font-size: 1.5rem;
-      }
-      a {
-        color: black;
-        text-decoration: none;
-        text-decoration-color: white;
-      }
-      .menus a:hover {
-        color: firebrick;
-        text-decoration: underline;
-        text-underline-offset: 1rem;
-        text-decoration-color: firebrick;
-      }
-      .logo:hover {
-        cursor: default;
-      }
+
       .logo img {
+        height: 50px;
+        width: auto;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2.5rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        position: relative;
+        padding: 0.5rem 0;
+      }
+
+      .nav-links a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 3px;
+        bottom: 0;
+        left: 50%;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+        border-radius: 2px;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      .nav-links a:hover {
+        color: #667eea;
+      }
+
+      /* Main Section */
+      #projects {
+        padding: 140px 5% 80px;
+        min-height: 100vh;
+        position: relative;
+        z-index: 1;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+        animation: fadeInDown 1s ease;
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .exploreMy {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+      }
+
+      .title {
+        font-size: 4rem;
+        color: white;
+        font-weight: 800;
+        text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1rem;
+      }
+
+      .title::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: white;
+        border-radius: 2px;
+      }
+
+      .subtitle {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.2rem;
+        margin-top: 2rem;
+        font-weight: 400;
+      }
+
+      /* Projects Grid */
+      .projects-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 3rem;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .project-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        animation: fadeInUp 0.6s ease forwards;
+        opacity: 0;
+        border: 2px solid transparent;
+      }
+
+      .project-card:nth-child(1) { animation-delay: 0.1s; }
+      .project-card:nth-child(2) { animation-delay: 0.2s; }
+      .project-card:nth-child(3) { animation-delay: 0.3s; }
+      .project-card:nth-child(4) { animation-delay: 0.4s; }
+      .project-card:nth-child(5) { animation-delay: 0.5s; }
+      .project-card:nth-child(6) { animation-delay: 0.6s; }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .project-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .project-card:hover::before {
+        opacity: 0.05;
+      }
+
+      .project-card:hover {
+        transform: translateY(-20px) scale(1.02);
+        box-shadow: 0 30px 70px rgba(102, 126, 234, 0.4);
+        border-color: #667eea;
+      }
+
+      .project-link {
+        text-decoration: none;
+        color: inherit;
         display: block;
+        position: relative;
+        z-index: 2;
+      }
+
+      .project-image {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .project-image::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.4));
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+
+      .project-card:hover .project-image::after {
+        opacity: 1;
+      }
+
+      .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .project-card:hover .project-image img {
+        transform: scale(1.15) rotate(2deg);
+      }
+
+      .project-text {
+        padding: 2rem;
+        text-align: left;
+      }
+
+      .project-text h3 {
+        font-size: 1.6rem;
+        color: #2c3e50;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        transition: color 0.3s ease;
+      }
+
+      .project-card:hover .project-text h3 {
+        color: #667eea;
+      }
+
+      .project-text p {
+        color: #666;
+        line-height: 1.8;
+        font-size: 1.05rem;
+      }
+
+      /* Back to Home Button */
+      .back-home {
+        text-align: center;
+        margin-top: 5rem;
+        padding-bottom: 3rem;
+      }
+
+      .back-home a {
+        display: inline-block;
+        padding: 1.2rem 3rem;
+        background: white;
+        color: #667eea;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        border: 3px solid white;
+      }
+
+      .back-home a::before {
+        content: '← ';
+        margin-right: 0.5rem;
+      }
+
+      .back-home a::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+        z-index: -1;
+      }
+
+      .back-home a:hover::after {
+        width: 400px;
+        height: 400px;
+      }
+
+      .back-home a:hover {
+        color: white;
+        transform: translateY(-5px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Project Count Badge */
+      .project-count {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border-radius: 30px;
+        font-weight: 600;
+        margin-top: 1rem;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      /* Mobile Hamburger Menu */
+      #mobile-nav {
+        display: none;
+      }
+
+      .hamburger-menu {
+        position: relative;
+      }
+
+      .hamburger-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 24px;
         width: 30px;
-        height: auto;
+        cursor: pointer;
+      }
+
+      .hamburger-icon span {
+        width: 100%;
+        height: 3px;
+        background-color: #333;
+        transition: all 0.3s ease-in-out;
+        border-radius: 2px;
+      }
+
+      .hamburger-icon.open span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+      }
+
+      .hamburger-icon.open span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger-icon.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -8px);
+      }
+
+      .menu-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        width: 250px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        border-radius: 10px;
+        margin-top: 10px;
+      }
+
+      .menu-links.open {
+        max-height: 400px;
+      }
+
+      .menu-links ul {
+        list-style: none;
+        padding: 1rem 0;
+      }
+
+      .menu-links li {
+        padding: 1rem 2rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .menu-links li:last-child {
+        border-bottom: none;
+      }
+
+      .menu-links a {
+        text-decoration: none;
+        color: #333;
+        font-size: 1.1rem;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .menu-links a:hover {
+        color: #667eea;
+      }
+
+      /* Responsive Design */
+      @media screen and (max-width: 1024px) {
+        .projects-container {
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: 2.5rem;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        #desktop-nav {
+          display: none;
+        }
+
+        #mobile-nav {
+          display: flex;
+        }
+
+        nav {
+          padding: 1.5rem 5%;
+        }
+
+        #projects {
+          padding: 120px 5% 60px;
+        }
+
+        .title {
+          font-size: 2.5rem;
+        }
+
+        .projects-container {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          padding: 0 1rem;
+        }
+
+        .back-home a {
+          padding: 1rem 2rem;
+          font-size: 1rem;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .title {
+          font-size: 2rem;
+        }
+
+        .exploreMy {
+          font-size: 1rem;
+          letter-spacing: 2px;
+        }
+
+        .project-text h3 {
+          font-size: 1.3rem;
+        }
+
+        .project-text p {
+          font-size: 0.95rem;
+        }
       }
     </style>
   </head>
   <body>
+    <!-- Background Decoration -->
+    <div class="bg-decoration">
+      <div class="circle circle-1"></div>
+      <div class="circle circle-2"></div>
+      <div class="circle circle-3"></div>
+    </div>
+
+    <!-- Desktop Navigation -->
     <nav id="desktop-nav">
-      <div class="logo"><img src="./assets/about.png" alt="" /></div>
+      <div class="logo">
+        <a href="index.html">
+          <img src="./assets/about.png" alt="Logo" />
+        </a>
+      </div>
       <div>
         <ul class="nav-links">
           <li><a href="index.html#about" class="menus">About</a></li>
@@ -132,9 +568,57 @@
         </ul>
       </div>
     </nav>
+
+    <!-- Mobile Navigation -->
+    <nav id="mobile-nav">
+      <div class="logo">
+        <a href="index.html">
+          <img src="./assets/about.png" alt="Logo" />
+        </a>
+      </div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links" id="menuLinks">
+          <ul>
+            <li><a href="index.html#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="index.html#experience" onclick="toggleMenu()">Experience</a></li>
+            <li><a href="index.html#projects" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Projects Section -->
     <section id="projects">
-      <h1 class="title">Projects</h1>
+      <div class="section-header">
+        <p class="exploreMy">Explore My Work</p>
+        <h1 class="title">All Projects</h1>
+        <p class="subtitle">A collection of my development work and creative solutions</p>
+        <span class="project-count">6 Projects</span>
+      </div>
+
       <div class="projects-container">
+        <div class="project-card">
+          <a href="crossnet.html" class="project-link">
+            <div class="project-image">
+              <img src="./assets/crossnet0.png" alt="crossnet project" />
+            </div>
+            <div class="project-text">
+              <h3>PSC SORONG 119</h3>
+              <p>
+                PSC Sorong 119 is an emergency response app that connects users to
+                medical services, providing real-time location tracking and quick
+                access to emergency contacts.
+              </p>
+            </div>
+          </a>
+        </div>
+
         <div class="project-card">
           <a href="NusantaraKafe.html" class="project-link">
             <div class="project-image">
@@ -197,10 +681,11 @@
             </div>
           </a>
         </div>
+
         <div class="project-card">
           <a href="presentea.html" class="project-link">
             <div class="project-image">
-              <img src="./assets/logopresentea.jpg" alt="presentea" />
+              <img src="./assets/logopresentea.jpg" alt="Presentea" />
             </div>
             <div class="project-text">
               <h3>Presentea</h3>
@@ -214,9 +699,28 @@
         </div>
       </div>
 
-      <!-- <div class="view-all-projects">
-        <a href="projects.html">View All Projects</a>
-      </div> -->
+      <div class="back-home">
+        <a href="index.html">Back to Home</a>
+      </div>
     </section>
+
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById('menuLinks');
+        const icon = document.querySelector('.hamburger-icon');
+        menu.classList.toggle('open');
+        icon.classList.toggle('open');
+      }
+
+      // Add scroll effect to navbar
+      window.addEventListener('scroll', function() {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 50) {
+          nav.style.padding = '1rem 10%';
+        } else {
+          nav.style.padding = '1.5rem 10%';
+        }
+      });
+    </script>
   </body>
 </html>
