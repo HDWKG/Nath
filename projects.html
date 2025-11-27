@@ -8,7 +8,7 @@
 
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
-      
+
       * {
         margin: 0;
         padding: 0;
@@ -70,7 +70,8 @@
       }
 
       @keyframes float {
-        0%, 100% {
+        0%,
+        100% {
           transform: translateY(0) scale(1);
           opacity: 0.3;
         }
@@ -120,7 +121,7 @@
       }
 
       .nav-links a::after {
-        content: '';
+        content: "";
         position: absolute;
         width: 0;
         height: 3px;
@@ -185,7 +186,7 @@
       }
 
       .title::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -15px;
         left: 50%;
@@ -225,12 +226,24 @@
         border: 2px solid transparent;
       }
 
-      .project-card:nth-child(1) { animation-delay: 0.1s; }
-      .project-card:nth-child(2) { animation-delay: 0.2s; }
-      .project-card:nth-child(3) { animation-delay: 0.3s; }
-      .project-card:nth-child(4) { animation-delay: 0.4s; }
-      .project-card:nth-child(5) { animation-delay: 0.5s; }
-      .project-card:nth-child(6) { animation-delay: 0.6s; }
+      .project-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .project-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .project-card:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .project-card:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      .project-card:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+      .project-card:nth-child(6) {
+        animation-delay: 0.6s;
+      }
 
       @keyframes fadeInUp {
         from {
@@ -244,7 +257,7 @@
       }
 
       .project-card::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -283,13 +296,17 @@
       }
 
       .project-image::after {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.4));
+        background: linear-gradient(
+          to bottom,
+          transparent 50%,
+          rgba(0, 0, 0, 0.4)
+        );
         opacity: 0;
         transition: opacity 0.4s ease;
       }
@@ -358,12 +375,12 @@
       }
 
       .back-home a::before {
-        content: '← ';
+        content: "← ";
         margin-right: 0.5rem;
       }
 
       .back-home a::after {
-        content: '';
+        content: "";
         position: absolute;
         top: 50%;
         left: 50%;
@@ -585,9 +602,17 @@
         <div class="menu-links" id="menuLinks">
           <ul>
             <li><a href="index.html#about" onclick="toggleMenu()">About</a></li>
-            <li><a href="index.html#experience" onclick="toggleMenu()">Experience</a></li>
-            <li><a href="index.html#projects" onclick="toggleMenu()">Projects</a></li>
-            <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
+            <li>
+              <a href="index.html#experience" onclick="toggleMenu()"
+                >Experience</a
+              >
+            </li>
+            <li>
+              <a href="index.html#projects" onclick="toggleMenu()">Projects</a>
+            </li>
+            <li>
+              <a href="index.html#contact" onclick="toggleMenu()">Contact</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -598,11 +623,28 @@
       <div class="section-header">
         <p class="exploreMy">Explore My Work</p>
         <h1 class="title">All Projects</h1>
-        <p class="subtitle">A collection of my development work and creative solutions</p>
+        <p class="subtitle">
+          A collection of my development work and creative solutions
+        </p>
         <span class="project-count">6 Projects</span>
       </div>
 
       <div class="projects-container">
+        <div class="project-card">
+          <a href="Pokedex.html" class="project-link">
+            <div class="project-image">
+              <img src="./assets/pokemon1.png" alt="pokemon project" />
+            </div>
+            <div class="project-text">
+              <h3>Pokedex</h3>
+              <p>
+                A React-based Pokédex application that allows users to browse,
+                search, and manage their favorite Pokémon with a sleek and
+                responsive design.
+              </p>
+            </div>
+          </a>
+        </div>
         <div class="project-card">
           <a href="crossnet.html" class="project-link">
             <div class="project-image">
@@ -611,9 +653,9 @@
             <div class="project-text">
               <h3>PSC SORONG 119</h3>
               <p>
-                PSC Sorong 119 is an emergency response app that connects users to
-                medical services, providing real-time location tracking and quick
-                access to emergency contacts.
+                PSC Sorong 119 is an emergency response app that connects users
+                to medical services, providing real-time location tracking and
+                quick access to emergency contacts.
               </p>
             </div>
           </a>
@@ -706,19 +748,19 @@
 
     <script>
       function toggleMenu() {
-        const menu = document.getElementById('menuLinks');
-        const icon = document.querySelector('.hamburger-icon');
-        menu.classList.toggle('open');
-        icon.classList.toggle('open');
+        const menu = document.getElementById("menuLinks");
+        const icon = document.querySelector(".hamburger-icon");
+        menu.classList.toggle("open");
+        icon.classList.toggle("open");
       }
 
       // Add scroll effect to navbar
-      window.addEventListener('scroll', function() {
-        const nav = document.querySelector('nav');
+      window.addEventListener("scroll", function () {
+        const nav = document.querySelector("nav");
         if (window.scrollY > 50) {
-          nav.style.padding = '1rem 10%';
+          nav.style.padding = "1rem 10%";
         } else {
-          nav.style.padding = '1.5rem 10%';
+          nav.style.padding = "1.5rem 10%";
         }
       });
     </script>

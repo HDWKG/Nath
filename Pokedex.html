@@ -696,11 +696,10 @@
 
     <!-- Hero Section -->
     <div class="hero">
-      <h1 class="title">PSC Sorong</h1>
+      <h1 class="title">React Pokedex</h1>
       <div class="project-meta">
-        <span class="meta-item">🤖 AI-Powered App</span>
         <span class="meta-item">📅 2025</span>
-        <span class="meta-item">👥 Team Project</span>
+        <span class="meta-item">👤 Solo Project</span>
       </div>
     </div>
 
@@ -711,17 +710,15 @@
 
     <!-- Content Sections -->
     <div class="content">
-      <img src="./assets/crossnet2.png" alt="crossnet 2" />
+      <img src="./assets/pokemon1.png" alt="pokedex1" />
       <div class="content-text-right">
-        <h2>What is PSC Sorong</h2>
+        <h2>What is Pokédex Manager?</h2>
         <p>
-          PSC Sorong is a web-based emergency response management system used by
-          the government health sector in Sorong. It allows operators and
-          supervisors to monitor incoming emergency cases, manage dispatch
-          information, track response data, and generate reports. The platform
-          centralizes case handling and ensures faster, more coordinated
-          communication between health facilities, ambulances, and emergency
-          teams.
+          Pokédex Manager is a web application designed to let users explore
+          Pokémon data, view detailed stats, and manage their personal Pokémon
+          collection. It fetches real-time Pokémon data from the PokéAPI and
+          provides an interactive experience for searching, saving, and
+          organizing Pokémon.
         </p>
       </div>
     </div>
@@ -730,39 +727,34 @@
       <div class="content-text-left">
         <h2>Features</h2>
         <p>
-          As part of the PSC Sorong system, the platform provides real-time
-          dashboards for tracking emergency case data, integrated reporting
-          functionality, and tools for managing incident categories, healthcare
-          facilities, and operational statistics. I worked on the frontend side,
-          implementing clean and responsive UI components, connecting API
-          endpoints, and ensuring smooth data flow between the backend and the
-          interface.
+          The application includes a dynamic catalog page where users can browse
+          Pokémon, view types, stats, and images. A dedicated "My Pokémon" page
+          allows users to catch and store their favorite Pokémon locally, with a
+          responsive UI and smooth navigation using React Router.
         </p>
         <p>
-          The system includes analytics pages with charts, summary reports, and
-          daily logs to help administrators monitor emergency workloads and
-          performance. I also optimized UI interactions and improved the user
-          experience for both operators and internal staff members.
+          It provides real-time search, animated card layouts, and persistent
+          storage using LocalStorage to ensure the collection remains saved even
+          after refresh or browser restart.
         </p>
       </div>
-      <img src="./assets/crossnet1.png" alt="crossnet1" />
+      <img src="./assets/pokemon2.png" alt="pokedex2" />
     </div>
 
     <div class="content">
       <div class="content-text">
         <h2>What I Learned</h2>
         <p>
-          While working on PSC Sorong, I strengthened my skills in building
-          scalable frontend architectures using Svelte 5 and TypeScript. I
-          learned how to handle dynamic API-driven interfaces, process complex
-          JSON structures, and manage state efficiently while keeping the UI
-          clean and responsive.
+          While developing Pokédex Manager, I improved my skills with React,
+          including component state management, routing architecture, and API
+          data handling with fetch/axios. I learned to build reusable UI
+          components, optimize rendering performance, and design responsive
+          layouts using Tailwind CSS.
         </p>
         <p>
-          I also gained experience collaborating with backend teams, improving
-          API integration workflows, and solving real-world UI/UX challenges in
-          a production-grade government web application. This project improved
-          my debugging, optimization, and component-based development skills.
+          The project also strengthened my understanding of full-stack
+          fundamentals, preparing me to integrate CI/CD pipelines, containerize
+          applications using Docker, and structure production-ready web apps.
         </p>
       </div>
     </div>
@@ -771,33 +763,30 @@
       <div class="content-text">
         <h2>Technologies Used</h2>
         <div class="tags">
-          <span>Svelte 5</span>
-          <span>TypeScript</span>
+          <span>React</span>
+          <span>Vite</span>
+          <span>Tailwind CSS</span>
+          <span>React Router</span>
+          <span>PokéAPI</span>
+          <span>LocalStorage</span>
+          <span>JavaScript (ES6+)</span>
           <span>REST API Integration</span>
-          <span>Front-End Architecture</span>
-          <span>Responsive UI</span>
         </div>
       </div>
     </div>
 
     <!-- Learn More Section -->
-    <!-- <div class="footer">
+    <div class="footer">
       <h2>Learn More</h2>
       <div class="btn-container">
         <button
           class="download-btn"
-          onclick="window.open('https://www.instagram.com/reel/DDLgmkYyoZi/?igsh=MXQybGttY3l5ZHNpdg==')"
+          onclick="window.open('https://github.com/HDWKG/Pokedex-React')"
         >
-          📱 Instagram
-        </button>
-        <button
-          class="download-btn"
-          onclick="window.open('https://www.ciputra.ac.id/presentea-aplikasi-presentasi-berbasis-ai-karya-mahasiswa-informatika-uc/')"
-        >
-          🎓 Ciputra UC
+          Github Repository
         </button>
       </div>
-    </div> -->
+    </div>
 
     <script>
       function toggleMenu() {
