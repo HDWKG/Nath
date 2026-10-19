@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-sans: "Public Sans", system-ui, sans-serif;
+  --color-paper: #eef1f6;
+  --color-ink: #14213d;
+  --color-cobalt: #2f4bff;
+  --color-signal: #CC338B;
+  --color-muted: #566078;
+  --color-line: #c9d0de;
+}
+
+html { scroll-behavior: smooth; }
+body { @apply bg-paper text-ink font-sans antialiased; }
+:focus-visible { outline: 3px solid var(--color-cobalt); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
