@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { site, projects } from './data'
-
+import { site, projects, experience } from './data'
 export default function Home() {
   const loc = useLocation()
   useEffect(() => {
@@ -34,7 +33,26 @@ export default function Home() {
           </Link>
         ))}
       </section>
-
+      <section id="experience" className="mt-24 grid scroll-mt-6 gap-6 md:grid-cols-[12rem_1fr]">
+        <h2 className="font-display text-2xl font-bold">Experience</h2>
+        <div>
+          {experience.map((e) => (
+            <div key={e.role} className="grid gap-x-8 gap-y-1 border-t border-line py-6 sm:grid-cols-[9rem_1fr]">
+              <p className="text-sm text-muted">{e.date}</p>
+              <div className="max-w-xl">
+                <h3 className="font-display text-xl font-bold">{e.role}</h3>
+                {e.org && <p className="text-sm font-medium">{e.org}</p>}
+                <p className="mt-3 leading-relaxed">{e.text}</p>
+                <ul className="mt-3 flex flex-wrap gap-2">
+                  {e.tags.map((t) => (
+                    <li key={t} className="rounded-full border border-ink/30 px-3 py-1 text-sm">{t}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
       <section id="about" className="mt-24 grid scroll-mt-6 gap-6 md:grid-cols-[12rem_1fr]">
         <h2 className="font-display text-2xl font-bold">About</h2>
         <div className="max-w-xl space-y-4 leading-relaxed">

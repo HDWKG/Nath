@@ -156,3 +156,37 @@ export const projects = [
     links: [{ label: 'Presentation', href: 'https://www.canva.com/design/DAGFH_dJp9s/FepNJnJAKzfUYMy6tmccfQ/view' }],
   },
 ]
+export const experience = [
+  {
+    role: 'Front-End Developer Intern',
+    org: 'PT. Cross Network Indonesia',
+    date: 'Jul – Dec 2025',
+    text: 'Built and improved internal web applications with Svelte and TypeScript: responsive interfaces, dynamic dashboards, and components that turn API data into clean UI. Worked with the backend team on integration and page performance.',
+    tags: ['Svelte', 'TypeScript'],
+  },
+  {
+    role: 'Assistant Lecturer, Mobile App Development',
+    date: 'Feb – Jun 2025',
+    text: 'Taught students to build iOS apps in Swift, covering UIKit, SwiftUI, Core Data and API integration. Ran lab sessions, reviewed code and gave feedback.',
+    tags: ['Swift', 'SwiftUI', 'Core Data'],
+  },
+  {
+    role: 'Assistant Lecturer, Visual Programming',
+    date: 'Sep 2024 – Jan 2025',
+    text: 'Taught Android development with Kotlin and Android Studio through hands-on projects, so students could build apps from the ground up.',
+    tags: ['Kotlin', 'Android Studio'],
+  },
+  {
+    role: 'Assistant Lecturer, Web Development',
+    date: 'Feb – Jun 2024',
+    text: 'Supported lessons on front-end and back-end development, with code reviews and one-on-one guidance on student projects.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Laravel'],
+  },
+  {
+    role: 'Publication & Documentation Coordinator',
+    org: 'Student Union Informatics',
+    date: 'Jul 2022 – Jul 2023',
+    text: 'Photographed and filmed union events and produced the visual content for them.', // TODO: describe what you actually did
+    tags: ['Photography', 'Videography'],
+  },
+]

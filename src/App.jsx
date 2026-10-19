@@ -13,6 +13,7 @@ function Shell({ children }) {
         <Link to="/" className="font-display text-lg font-bold">{site.name}</Link>
         <nav className="flex gap-6 text-sm font-medium">
           <a href="#projects" onClick={goTo('projects')} className={link}>Projects</a>
+          <a href="#experience" onClick={goTo('experience')} className={link}>Experience</a>
           <a href="#about" onClick={goTo('about')} className={link}>About</a>
           <a href="#contact" onClick={goTo('contact')} className={link}>Contact</a>
         </nav>
