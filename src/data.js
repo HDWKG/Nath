@@ -5,11 +5,13 @@ export const site = {
   intro: 'Student at Fontys ICT, building mobile apps, games and web interfaces, usually with a team and sometimes alone.',
   about: [
     'I work across mobile (Kotlin, Swift), games (Unity, C#) and the web (React, Svelte). I like projects where design and code have to meet in the middle.',
-    'Most of what is below started as a university or competition project.',
+    'I study Informatics at Universitas Ciputra Surabaya and continue with a dual degree Bachelor of ICT at Fontys ICT in 2026 – 2027.',
   ],
   contact: [
     { label: 'GitHub', href: 'https://github.com/HDWKG' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/nathan-darrell/'},
     { label: 'ndsutejo@gmail.com', href: 'mailto:ndsutejo@gmail.com' },
+
   ],
 }
 
@@ -156,37 +158,56 @@ export const projects = [
     links: [{ label: 'Presentation', href: 'https://www.canva.com/design/DAGFH_dJp9s/FepNJnJAKzfUYMy6tmccfQ/view' }],
   },
 ]
+const uc = 'Universitas Ciputra Surabaya, Informatics'
+
 export const experience = [
   {
-    role: 'Front-End Developer Intern',
-    org: 'PT. Cross Network Indonesia',
-    date: 'Jul – Dec 2025',
-    text: 'Built and improved internal web applications with Svelte and TypeScript: responsive interfaces, dynamic dashboards, and components that turn API data into clean UI. Worked with the backend team on integration and page performance.',
-    tags: ['Svelte', 'TypeScript'],
+    role: 'Front-End Developer Intern', org: 'Cross Network Indonesia', date: 'Jul – Dec 2025',
+    points: [
+      'Developed and optimized responsive web interfaces using SvelteKit, Tailwind CSS, and TypeScript for internal dashboards and client platforms.',
+      'Integrated RESTful APIs and dynamic data visualizations with tools like Chart.js and Carbon Charts.',
+      'Collaborated with backend developers and designers to implement new features, fix bugs, and improve user experience and accessibility.',
+    ],
+    tags: ['SvelteKit', 'TypeScript', 'Tailwind CSS', 'Chart.js'],
   },
   {
-    role: 'Assistant Lecturer, Mobile App Development',
-    date: 'Feb – Jun 2025',
-    text: 'Taught students to build iOS apps in Swift, covering UIKit, SwiftUI, Core Data and API integration. Ran lab sessions, reviewed code and gave feedback.',
-    tags: ['Swift', 'SwiftUI', 'Core Data'],
+    role: 'Assistant Lecturer, Mobile App Development', org: uc, date: 'Feb – Jun 2025',
+    points: [
+      'Guided students in designing and developing iOS apps using Swift, SwiftUI, and UIKit.',
+      'Led lab sessions on Core Data, API integration, and app performance optimization.',
+      'Reviewed student projects and gave feedback aligned with industry best practices.',
+    ],
+    tags: ['Swift', 'SwiftUI', 'UIKit', 'Core Data'],
   },
   {
-    role: 'Assistant Lecturer, Visual Programming',
-    date: 'Sep 2024 – Jan 2025',
-    text: 'Taught Android development with Kotlin and Android Studio through hands-on projects, so students could build apps from the ground up.',
+    role: 'Assistant Lecturer, Visual Programming', org: uc, date: 'Sep 2024 – Jan 2025',
+    points: [
+      'Taught mobile app development using Kotlin and Android Studio through visual programming techniques.',
+      'Emphasized hands-on projects to reinforce Android development fundamentals.',
+    ],
     tags: ['Kotlin', 'Android Studio'],
   },
   {
-    role: 'Assistant Lecturer, Web Development',
-    date: 'Feb – Jun 2024',
-    text: 'Supported lessons on front-end and back-end development, with code reviews and one-on-one guidance on student projects.',
+    role: 'Assistant Lecturer, Web Development', org: uc, date: 'Feb – Jun 2024',
+    points: [
+      'Delivered lessons on HTML, CSS, JavaScript, and back-end tools like Laravel.',
+      'Supported students with code reviews, debugging, and real-world project guidance.',
+    ],
     tags: ['HTML', 'CSS', 'JavaScript', 'Laravel'],
   },
+]
+
+export const education = [
+  { school: 'Fontys ICT', degree: 'Bachelor of ICT', date: '2026 – 2027' },
   {
-    role: 'Publication & Documentation Coordinator',
-    org: 'Student Union Informatics',
-    date: 'Jul 2022 – Jul 2023',
-    text: 'Photographed and filmed union events and produced the visual content for them.', // TODO: describe what you actually did
-    tags: ['Photography', 'Videography'],
+    school: 'Universitas Ciputra Surabaya', degree: 'Bachelor of Informatics', date: '2022 – 2027',
+    notes: ['GPA: 3.7', 'Publication & Documentation Coordinator, Student Union Informatics'],
   },
+]
+
+export const certificates = [
+  { name: 'Natural Language Processing and Computer Vision', issuer: 'Student Ambassador Program with IBM SkillsBuild', date: '2025' },
+  { name: 'Build Your First Chatbot', issuer: 'Student Ambassador Program with IBM SkillsBuild', date: '2025' },
+  { name: 'IELTS', issuer: 'IDP Consulting Indonesia', date: 'Jan 2025 – Jan 2027' },
+  { name: 'BUSM3307 Project Management Concepts', issuer: 'RMIT Global Summer School Program', date: '2021' },
 ]

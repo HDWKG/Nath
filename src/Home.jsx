@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { site, projects, experience } from './data'
+import { site, projects, experience, education, certificates } from './data'
 export default function Home() {
   const loc = useLocation()
   useEffect(() => {
@@ -42,7 +42,9 @@ export default function Home() {
               <div className="max-w-xl">
                 <h3 className="font-display text-xl font-bold">{e.role}</h3>
                 {e.org && <p className="text-sm font-medium">{e.org}</p>}
-                <p className="mt-3 leading-relaxed">{e.text}</p>
+                <ul className="mt-3 list-disc space-y-1.5 pl-5 leading-relaxed">
+                  {e.points.map((t) => <li key={t}>{t}</li>)}
+                </ul>
                 <ul className="mt-3 flex flex-wrap gap-2">
                   {e.tags.map((t) => (
                     <li key={t} className="rounded-full border border-ink/30 px-3 py-1 text-sm">{t}</li>
@@ -53,6 +55,37 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <section id="education" className="mt-24 grid scroll-mt-6 gap-6 md:grid-cols-[12rem_1fr]">
+        <h2 className="font-display text-2xl font-bold">Education</h2>
+        <div>
+          {education.map((e) => (
+            <div key={e.school} className="grid gap-x-8 gap-y-1 border-t border-line py-6 sm:grid-cols-[9rem_1fr]">
+              <p className="text-sm text-muted">{e.date}</p>
+              <div className="max-w-xl">
+                <h3 className="font-display text-xl font-bold">{e.school}</h3>
+                <p className="text-sm font-medium">{e.degree}</p>
+                {e.notes && (
+                  <ul className="mt-3 list-disc space-y-1.5 pl-5 leading-relaxed">
+                    {e.notes.map((n) => <li key={n}>{n}</li>)}
+                  </ul>
+                )}
+              </div>
+            </div>
+          ))}
+          <h3 className="mb-2 mt-10 font-display text-xl font-bold">Certificates</h3>
+          {certificates.map((c) => (
+            <div key={c.name} className="grid gap-x-8 gap-y-1 border-t border-line py-4 sm:grid-cols-[9rem_1fr]">
+              <p className="text-sm text-muted">{c.date}</p>
+              <div>
+                <p className="font-medium">{c.name}</p>
+                <p className="text-sm text-muted">{c.issuer}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section id="about" className="mt-24 grid scroll-mt-6 gap-6 md:grid-cols-[12rem_1fr]">
         <h2 className="font-display text-2xl font-bold">About</h2>
         <div className="max-w-xl space-y-4 leading-relaxed">
