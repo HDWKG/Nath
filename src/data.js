@@ -53,7 +53,7 @@ export const projects = [
   },
   {
     slug: 'presentea', title: 'Presentea', kind: 'AI-powered app', date: '2025', team: 'Team project',
-    images: ['newspresentea.png', 'presentea1.jpg'],
+    images: ['newspresentea.png', 'presentea1.png'],
     aboutTitle: 'What is Presentea',
     about: 'Presentea is an AI-powered presentation evaluation app that helps users improve their public speaking. It analyzes body language, facial expressions, and vocal delivery, detecting filler words like "uhm" and "ahh" to provide real-time feedback and scoring. By offering insights into confidence, clarity, and engagement, it helps users deliver more polished, professional presentations.',
     featuresTitle: 'Features',
