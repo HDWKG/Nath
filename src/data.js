@@ -53,7 +53,7 @@ export const projects = [
   },
   {
     slug: 'presentea', title: 'Presentea', kind: 'AI-powered app', date: '2025', team: 'Team project',
-    images: ['logopresentea.jpg', 'presentf.jpg'],
+    images: ['newspresentea.png', 'presentea1.jpg'],
     aboutTitle: 'What is Presentea',
     about: 'Presentea is an AI-powered presentation evaluation app that helps users improve their public speaking. It analyzes body language, facial expressions, and vocal delivery, detecting filler words like "uhm" and "ahh" to provide real-time feedback and scoring. By offering insights into confidence, clarity, and engagement, it helps users deliver more polished, professional presentations.',
     featuresTitle: 'Features',
@@ -66,12 +66,14 @@ export const projects = [
     ],
     tech: ['Teachable Machine', 'Machine Learning', 'Python', 'Voice detection', 'Gesture detection'],
     credits: {
-      people: [li('Gerald Gavin Lienardi', 'https://www.linkedin.com/in/gerald-lienardi-502427256/'), li('Christian Tanjung', 'https://www.linkedin.com/in/christian-tanjung-79a09b257/'), li('Gabriela Sihutomo', 'https://www.linkedin.com/in/gabriela-sihutomo/'), li('Jason Miracle Gunawan', 'https://www.linkedin.com/in/jason-miracle-gunawan-515961256/'), li('Karyna Budi Sanjaya', 'https://www.linkedin.com/in/karyna-sanjaya/')],
+      people: [li('Karyna Budi Sanjaya', 'https://www.linkedin.com/in/karyna-sanjaya/'), li('Gerald Gavin Lienardi', 'https://www.linkedin.com/in/gerald-lienardi-502427256/'), li('Christian Tanjung', 'https://www.linkedin.com/in/christian-tanjung-79a09b257/'), li('Gabriela Sihutomo', 'https://www.linkedin.com/in/gabriela-sihutomo/'), li('Jason Miracle Gunawan', 'https://www.linkedin.com/in/jason-miracle-gunawan-515961256/')],
       note: '',
     },
     links: [
       { label: 'Instagram', href: 'https://www.instagram.com/reel/DDLgmkYyoZi/?igsh=MXQybGttY3l5ZHNpdg==' },
       { label: 'Ciputra UC article', href: 'https://www.ciputra.ac.id/presentea-aplikasi-presentasi-berbasis-ai-karya-mahasiswa-informatika-uc/' },
+      { label: 'Newspaper Coverage', href: 'https://online.fliphtml5.com/jrime/kjuf/#p=14' },
+      { label: 'Presentation', href:'https://canva.link/uh4neetrgucgi8n'}
     ],
   },
   {
